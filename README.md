@@ -23,6 +23,7 @@ https://sites.google.com/view/storydistiller/
 
 ## Paper
 StoryDroid: Automated Generation of Storyboard for Android Apps
+'''
 @inproceedings{chen2019storydroid,
   title={Storydroid: Automated generation of storyboard for Android apps},
   author={Chen, Sen and Fan, Lingling and Chen, Chunyang and Su, Ting and Li, Wenhe and Liu, Yang and Xu, Lihua},
@@ -31,5 +32,6 @@ StoryDroid: Automated Generation of Storyboard for Android Apps
   year={2019},
   organization={IEEE}
 }
+'''
 
 Automatically Distilling Storyboard with Rich Features for Android Apps
