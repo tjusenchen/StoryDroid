@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="PrefsNotifyItems">
+        <item>πάντα</item>
+        <item>όταν συνδέεται μόνο</item>
+        <item>ποτέ</item>
+    </array>
+    <array name="PrefsNotifyOptions">
+        <item>Η Υπηρεσία θα ξεκινήσει κανονικά με εμφάνιση εικονιδίου στην μπάρα ειδοποιήσεων.</item>
+        <item>Το εικονίδιο θα εμφανίζεται μόνο όταν υπάρχουν συνδεδεμένες συσκευές.</item>
+        <item>Η Υπηρεσία θα ξεκινήσει στο παρασκήνιο χωρίς εμφάνιση εικονιδίου στην μπάρα ειδοποιήσεων.</item>
+    </array>
+    <array name="gpsDistance">
+        <item>2μ. (6πόδια)</item>
+        <item>5μ. (15πόδια)</item>
+        <item>10μ. (30πόδια)</item>
+        <item>15μ. (45πόδια)</item>
+        <item>20μ. (60πόδια)</item>
+        <item>30μ. (90πόδια)</item>
+    </array>
+    <array name="gpsDistance_items">
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>30</item>
+    </array>
+    <array name="gpsTimeout">
+        <item>Απενεργοποίηση δέκτη GPS</item>
+        <item>5 δευτερόλεπτα</item>
+        <item>10 δευτερόλεπτα</item>
+        <item>15 δευτερόλεπτα</item>
+        <item>20 δευτερόλεπτα</item>
+        <item>30 δευτερόλεπτα</item>
+        <item>45 δευτερόλεπτα</item>
+    </array>
+    <array name="gpsTimeout_items">
+        <item>@null</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>15000</item>
+        <item>20000</item>
+        <item>30000</item>
+        <item>45000</item>
+    </array>
+</resources>
