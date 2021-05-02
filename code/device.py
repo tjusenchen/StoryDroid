@@ -3,7 +3,7 @@ import os, commands, csv, time
 from scrapy.http.response import xml
 
 import cv2
-import getWidgetAttributes
+import get_widget_attributes
 
 adb = 'adb'
 result_folder = ''
@@ -36,7 +36,7 @@ def get_components(d_path, act):
     if not os.path.exists(components_path):
         os.makedirs(components_path)
     csv_path = os.path.join(result_folder, components_path, act + '.csv')
-    getWidgetAttributes.parse_xml(xml_path, csv_path)
+    get_widget_attributes.parse_xml(xml_path, csv_path)
     csv_reader = csv.reader(open(csv_path, 'r'))
     # next(csv_reader)
     for row in csv_reader:

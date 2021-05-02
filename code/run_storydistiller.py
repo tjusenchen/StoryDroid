@@ -1,11 +1,11 @@
+'''
+Authors: Sen Chen and Lingling Fan
+'''
 # coding=utf-8
-# Author Sen Chen and Lingling Fan
-
 import os, commands, collections, sys
 import shutil
-
-import traverseTree
-import getActivityMethodCode
+import traverse_tree
+import get_act_method_code
 import run_rpk_explore_apk
 import create_json_withindent
 import csv
@@ -15,42 +15,53 @@ defined_pkg_name = ''
 defined_app_name = ''
 used_pkg_name = ''
 
-#java_home_path = '/usr/lib/jvm/jdk1.8.0_45'
-java_home_path = '/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home'
+'''
+Ubuntu and Macbook
+'''
+#java_home_path = '/usr/lib/jvm/jdk1.8.0_45' # Ubuntu
+java_home_path = '/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home' # Macbook
+
 #sdk_platform_path = '/home/senchen/Desktop/storydistiller/config/libs/android-platforms/'
 sdk_platform_path = '/Users/chensen/Tools/storydistiller/config/libs/android-platforms/'
+
 #lib_home_path = '/home/senchen/Desktop/storydistiller/config/libs/'
 lib_home_path = '/Users/chensen/Tools/storydistiller/config/libs/'
+
 #callbacks_path = '/home/senchen/Desktop/storydistiller/config/AndroidCallbacks.txt'
 callbacks_path = '/Users/chensen/Tools/storydistiller/config/AndroidCallbacks.txt'
+
 #jadx_path = '/home/senchen/Desktop/jadx-master/'
 #ic3_path = '/home/senchen/Desktop/IC3/'
 jadx_path = '/Users/chensen/Tools/storydroid_v1/jadx-master/'
 ic3_path = '/Users/chensen/Tools/storydroid_v1/IC3/'
 
-# rename the app name
+'''
+Rename the app name
+'''
 def rename(apk_path, apk_dir):
     global defined_pkg_name
     global used_pkg_name
     defined_pkg_name = commands.getoutput('aapt dump badging %s | grep package | awk \'{print $2}\' | sed s/name=//g | sed s/\\\'//g'%(apk_path))
     launcher = commands.getoutput(r"aapt dump badging " + apk_path + " | grep launchable-activity | awk '{print $2}'")
-    # sometimes launcher is empty or launcher starts with "."
+    # Sometimes launcher is empty or launcher starts with "."
     if launcher == '' or defined_pkg_name in launcher or launcher.startswith("."):
         used_pkg_name = defined_pkg_name
     else:
         used_pkg_name = launcher.replace('.' + launcher.split('.')[-1], '').split('\'')[1]
-    print 'rename pkg: ' + used_pkg_name
+    print 'Rename pkg: ' + used_pkg_name
 
     version = commands.getoutput('aapt dump badging %s | grep versionName | awk \'{print $3}\' | sed s/versionCode=//g | sed s/\\\'//g'%(apk_path))
     os.system('mv %s %s'%(apk_path, apk_dir + used_pkg_name + '_' + version + '.apk')) # used_pkg_name_version.apk
-    global  defined_app_name
+    global defined_app_name
     defined_app_name = defined_pkg_name + '_' + version
     return apk_dir + used_pkg_name + '_' + version + '.apk'
 
-# get icon of the app
+'''
+Get icon of the app
+'''
 def get_icon(results_visual_icon):
     #icon_path = output + 'java_codes/' + apk_name + '/resources/res/mipmap-hdpi-v4/ic_launcher.png'
-    '''need to check the path'''
+    '''Need to check the path'''
     icon_path = output + 'java_code/' + apk_name + '/resources/res/drawable-xhdpi-v4/ic_launcher.png'
     if os.path.exists(icon_path):
         os.system('cp %s %s'%(icon_path, results_visual_icon))
@@ -58,7 +69,9 @@ def get_icon(results_visual_icon):
         icon_path = output + 'java_code/' + apk_name + '/resources/res/drawable-xhdpi-v4/icon.png'
         os.system('cp %s %s' % (icon_path, results_visual_icon))
 
-## decomile the apk and get the Java appstory
+'''
+Decomile the apk and get the Java appstory
+'''
 def decompile(apk_path, apk_name):
     global launchActivity
     #bin_path = output + 'jadx-master/build/jadx/bin/'
@@ -77,7 +90,7 @@ def decompile(apk_path, apk_name):
         os.chdir(bin_path)
         os.system('./jadx -d %s %s' % (results_JavaCode, apk_path))
 
-    # get icon
+    # Get icon
     get_icon(results_visual_icon)
 
     launchActivity = commands.getoutput('aapt dump badging %s | grep launchable-activity | awk \'{print $2}\' | sed s/name=//g | sed s/\\\'//g'%apk_path)
@@ -87,7 +100,9 @@ def decompile(apk_path, apk_name):
     launcher_file = open(result_launcher, 'wb')
     launcher_file.write(launchActivity)
 
-# execure the IC3
+'''
+Run IC3
+'''
 def run_IC3(apk_path):
     IC3_fail_file = output + 'outputs/IC3_fail.txt'
     results_IC3_dir = output + 'ic3_atgs/'
@@ -116,7 +131,9 @@ def run_IC3(apk_path):
 
     return results_IC3
 
-# parse the results of IC3
+'''
+Parse the results of IC3
+'''
 def parse_IC3(file, pkg):
     dict = {}
     f = open(file, 'rb')
@@ -180,7 +197,9 @@ def parse_IC3(file, pkg):
     #         print k + '->' + v1
     return dict
 
-# save the parsed results of IC3
+'''
+Save the parsed results of IC3
+'''
 def save_parsed_IC3(dict):
     results_parseIC3_dir = output + 'parsed_ic3/'
     if not os.path.exists(results_parseIC3_dir):
@@ -193,14 +212,18 @@ def save_parsed_IC3(dict):
         for v1 in v:
             open(results_parseIC3_dir + apk_name + '.txt', 'ab').write(k + '-->' + v1 + '\n')
 
-# get call graphs of the app
+'''
+Get call graphs of the app
+'''
 def get_callgraphs(apk_path):
     results_CG_dir = output + 'soot_cgs/'
     CG_jar = output + 'config/CGGenerator.jar'
     os.chdir(output)
     os.system('java -Xmx4g -jar %s %s %s %s %s' % (CG_jar, apk_path, results_CG_dir, sdk_platform_path, callbacks_path))
 
-# parse the results of call graphs
+'''
+Parse the results of call graphs
+'''
 def parse_CG(cg_file, pkg_name):
     if not os.path.exists(output + 'soot_cgs/' + apk_name + '.txt'):
         return
@@ -217,7 +240,9 @@ def parse_CG(cg_file, pkg_name):
     #print '[6] Parse CG: DONE'
     return dict
 
-# save the parsed results of call graphs
+'''
+Save the parsed results of call graphs
+'''
 def save_parsed_CG(dict):
     results_parsedCG_dir = output + 'parsed_cgs/'
     if not os.path.exists(results_parsedCG_dir):
@@ -235,16 +260,32 @@ def save_parsed_CG(dict):
         for v1 in v:
             saved_parseCG_visulization.write(k + '-->' + v1 + '\n')
 
-# execute our enhanced tool
+'''
+Run soot
+'''
 def run_soot(output, apk_path, pkg_name, apk_name):
     results_enhancedIC3 = output + 'storydroid_atgs/' + apk_name + '.txt'
     if os.path.exists(results_enhancedIC3):
         return
+
+    '''
+    Using jar
     enhancedIC3_jar = output + 'config/run_soot.jar'
     os.chdir(output)
     os.system('java -jar %s %s %s %s %s %s %s' % (enhancedIC3_jar, output, apk_path, pkg_name, java_home_path, sdk_platform_path, lib_home_path))
+    '''
 
-# get the results of transitions
+    '''
+    Using binary
+    '''
+    config_path = os.path.join(output, 'config/')
+    soot_binary = 'run_soot.run'
+    os.chdir(config_path)
+    os.system('./%s %s %s %s %s %s %s' % (soot_binary, output, apk_path, pkg_name, java_home_path, sdk_platform_path, lib_home_path))
+
+'''
+Get the results of transitions
+'''
 def get_atgs(apk_name):
     results_parseIC3 = output + 'parsed_ic3/' + apk_name + '.txt'
     results_enhancedIC3 = output + 'storydroid_atgs/' + apk_name + '.txt'
@@ -269,6 +310,9 @@ def get_atgs(apk_name):
     for ICC in ICCs:
         file_ICCs_visulization.write(ICC)
 
+'''
+Copy file
+'''
 def copy_search_file(srcDir, desDir):
     if not os.path.exists(desDir):
         os.mkdir(desDir)
@@ -335,21 +379,22 @@ def getSootOutput(apk_path, apk_name):
     os.system('java -jar %s %s %s %s %s' % (sootOutput_jar, sootOutput_dir, apk_name, output, apk_path))
     print '[3] Get SootOutput and Check Layout Type: DONE'
 
-# main method
+
 if __name__ == '__main__':
 
-    output = sys.argv[1] # home folder
+    output = sys.argv[1] # Main folder path
     # output = '/home/senchen/Desktop/storydistiller/'
     # output = '/Users/chensen/Tools/storydistiller/'
     # adb = sys.argv[2] # adb emulator
 
     adb = 'adb '
 
-    apk_dir = os.path.join(output, 'apks/') # apk folder
+    apk_dir = os.path.join(output, 'apks/') # APK folder
 
-    out_csv = os.path.join(output, 'log.csv') # log file
+    out_csv = os.path.join(output, 'log.csv') # Log file
     csv.writer(open(out_csv, 'a')).writerow(('apk_name', 'pkg_name', 'all_act_num', 'launched_act_num',
                                              'act_not_in_atg', 'act_not_launched', 'all_atg', 'soot_atg', 'new_atg'))
+
     # print 'All atgs: ' + str(len(union_list))
     # print union_list
     # print 'Soot atgs: ' + str(len(static_list))
@@ -370,16 +415,22 @@ if __name__ == '__main__':
             apk_name = os.path.split(apk_path)[1].split('.apk')[0]
             print '[1] Rename app is done.'
 
-            # Create output folder
+            '''
+            Create output folder
+            '''
             dir = output + '/outputs/' + apk_name + '/'
             if not os.path.exists(dir):
                 os.makedirs(dir)
 
-            # Save pkg name
+            '''
+            Save pkg name
+            '''
             open(dir + 'used_pkg_name.txt', 'wb').write(used_pkg_name + '\n')
             open(dir + 'defined_pkg_name.txt', 'wb').write(defined_pkg_name + '\n')
 
-            # Create sootOutput folder
+            '''
+            Create sootOutput folder
+            '''
             sootOutput_dir = output + 'sootOutput/' + apk_name + '/'
             if not os.path.exists(sootOutput_dir):
                 os.makedirs(sootOutput_dir)
@@ -388,6 +439,9 @@ if __name__ == '__main__':
             decompile(apk_path, apk_name)
             print '[2] Decompile apk is done.'
 
+            '''
+            The results are used for running IC3, which are the inputs of IC3
+            '''
             print 'Start to get SootOutput (class) and check layout type'
             getSootOutput(apk_path, apk_name)
 
@@ -414,8 +468,8 @@ if __name__ == '__main__':
             save_parsed_CG(dict)
             print '[6] Parse call graphs is done'
 
-            print '[7] Get Jimple ' + apk_name
-            shutil.rmtree(sootOutput_dir)  # delete sootOutput
+            print '[7] Get JIMPLE ' + apk_name
+            shutil.rmtree(sootOutput_dir)  # Delete sootOutput
             #os.chdir(output + 'apktojimple')
             #os.system('./decompile.sh %s %s'%(apk_path, sootOutput_dir))
             #print '[7] Get Jimple is done'
@@ -432,12 +486,12 @@ if __name__ == '__main__':
             results_visulization_ICCs = result_apkfolder + apk_name + '_atgs.txt'
             processed_cg_file = result_apkfolder + apk_name + '_cgs.txt'
             if os.path.exists(results_JavaCode):
-                getActivityMethodCode.main(results_JavaCode, result_apkfolder, results_visulization_ICCs, processed_cg_file, launchActivity)
+                get_act_method_code.main(results_JavaCode, result_apkfolder, results_visulization_ICCs, processed_cg_file, launchActivity)
             print '[9] Get components and method code is done'
 
             print '[10] Start to get method call sequence'
             if os.path.exists(processed_cg_file):
-                traverseTree.main(processed_cg_file, results_visulization_ICCs, result_apkfolder)
+                traverse_tree.main(processed_cg_file, results_visulization_ICCs, result_apkfolder)
             print '[10] Get method call sequence is done'
 
             ####Core####
@@ -467,17 +521,17 @@ if __name__ == '__main__':
             #print new_edge_list
 
             if all_acts != None:
-                # get some statistics
+                # Get some statistics
                 launched_act_num = int(
                     commands.getoutput('ls %s | wc -l' % (result_apkfolder + 'screenshots')).split('\n')[0])
 
-                # print launched_act_num
+                # Print launched_act_num
                 act_not_in_atg = get_act_not_in_atg(all_acts)
 
-                # print act_not_in_atg
+                # Print act_not_in_atg
                 act_not_launched = get_acy_not_launched(all_acts)
 
-                # print act_not_launched
+                # Print act_not_launched
                 csv.writer(open(out_csv, 'a')).writerow((apk_name, used_pkg_name, len(all_acts), launched_act_num, act_not_in_atg, act_not_launched,
                                                          str(len(union_list)), str(len(static_list)), str(len(new_unique_list))))
 

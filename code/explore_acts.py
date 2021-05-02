@@ -82,7 +82,9 @@ def get_full_activity(component):
         activity = act
     return activity
 
-##add for the revise version of TSE
+'''
+Add for the revised version of TSE paper
+'''
 def explore_actionable_widgets(activity, actionable_widgets, appname):
     # actionable_widgets dict: {resource-id: [android.widget.Button, clickpointx, checkpointy]}
     pair = {}
@@ -243,33 +245,41 @@ def exploreAct(apk_path, apk_name, apkresult_folder):
 
     act_paras_file = os.path.join(apkresult_folder, 'activity_paras.txt')
 
-    ##intall apk
+    '''
+    Install apk
+    '''
     result = device.installAPP(apk_path, apk_name)
 
     if result == 'Failure':
         return
 
-    ##get package name
+    '''
+    Get package name
+    '''
     get_pkgname(apk_path)
 
-    ##get all activity and their attributes such as action, category, and inter-filter
+    '''
+    Get all activity and their attributes such as action, category, and inter-filter
+    '''
     pairs = parseManifest(apk_name)
     print "%s parsing fininshed!" % apk_name
 
-    # format of pairs: {activity: [[action1, category1],[action2, category2]]}
+    '''
+    Format of pairs: {activity: [[action1, category1],[action2, category2]]}
+    '''
     for activity, other in pairs.items():
-        ##This is the defined format of uiautomator
+        # This is the defined format of uiautomator
         component = defined_pkg_name + '/' + activity
         for s in other:
             action = s[0]
             category = s[1]
 
-            ###go through all activitys
+            # Go through all activities
             status = startAct(component, action, category, apk_name, act_paras_file)
             if status =='normal':
                 break
 
-        # without action and category
+        # Without action and category
         startAct(component, '', '', apk_name, act_paras_file)
 
     device.uninstallApp(defined_pkg_name)

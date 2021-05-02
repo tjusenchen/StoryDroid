@@ -4,8 +4,8 @@
 import os, commands, collections
 import shutil
 
-import traverseTree
-import getActivityMethodCode
+import traverse_tree
+import get_act_method_code
 import run_rpk_explore_apk
 import create_json_withindent
 import csv

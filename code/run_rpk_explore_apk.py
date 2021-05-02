@@ -1,20 +1,23 @@
 import os,sys
-import repkgApp, exploreAct_storydroid
+import repkg_apk, explore_acts
 
 
 def execute(apk_path, apk_name, result_apkfolder, output):
 
     print '======= Starting ' + apk_name + ' ========='
-    # repackge app
+
+    '''
+    Repackge app
+    '''
     if not os.path.exists(os.path.join(result_apkfolder,apk_name+'.apk')):
-        r = repkgApp.startRepkg(apk_path, apk_name, result_apkfolder, output)
+        r = repkg_apk.startRepkg(apk_path, apk_name, result_apkfolder, output)
         if r == 'no apk':
             print 'apk not successfully recompiled!!!!!!!!!'
 
     new_apkpath = os.path.join(result_apkfolder, apk_name+'.apk')
 
     if os.path.exists(new_apkpath):
-        all_acts = exploreAct_storydroid.exploreAct(new_apkpath, apk_name, result_apkfolder)
+        all_acts = explore_acts.exploreAct(new_apkpath, apk_name, result_apkfolder)
         return all_acts
     else:
         print 'No such repackaged app exist............'

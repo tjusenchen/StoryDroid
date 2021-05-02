@@ -1,3 +1,6 @@
+'''
+Author: Lingling Fan
+'''
 from treelib import Node, Tree
 import treelib, shutil, os
 
