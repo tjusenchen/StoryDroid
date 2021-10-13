@@ -1,9 +1,8 @@
 '''
 Authors: Sen Chen and Lingling Fan
 '''
-
 # coding=utf-8
-import os, commands, collections, sys
+import os, commands, collections, sys, platform
 import shutil
 import traverse_tree
 import get_act_method_code
@@ -19,22 +18,26 @@ used_pkg_name = ''
 '''
 Ubuntu and Macbook
 '''
-#java_home_path = '/usr/lib/jvm/jdk1.8.0_45' # Ubuntu
-java_home_path = '/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home' # Macbook
 
-#sdk_platform_path = '/home/senchen/Desktop/storydistiller/config/libs/android-platforms/'
-sdk_platform_path = '/Users/chensen/Tools/storydistiller/config/libs/android-platforms/'
+os = platform.system()
 
-#lib_home_path = '/home/senchen/Desktop/storydistiller/config/libs/'
-lib_home_path = '/Users/chensen/Tools/storydistiller/config/libs/'
+print 'Current environment: ' + os
 
-#callbacks_path = '/home/senchen/Desktop/storydistiller/config/AndroidCallbacks.txt'
-callbacks_path = '/Users/chensen/Tools/storydistiller/config/AndroidCallbacks.txt'
+if 'Linux' in os: # Ubuntu
+    java_home_path = '/usr/lib/jvm/jdk1.8.0_45'
+    sdk_platform_path = '/home/senchen/Desktop/storydistiller/config/libs/android-platforms/'
+    lib_home_path = '/home/senchen/Desktop/storydistiller/config/libs/'
+    callbacks_path = '/home/senchen/Desktop/storydistiller/config/AndroidCallbacks.txt'
+    jadx_path = '/home/senchen/Desktop/jadx-master/'
+    ic3_path = '/home/senchen/Desktop/IC3/'
 
-#jadx_path = '/home/senchen/Desktop/jadx-master/'
-#ic3_path = '/home/senchen/Desktop/IC3/'
-jadx_path = '/Users/chensen/Tools/storydroid_v1/jadx-master/'
-ic3_path = '/Users/chensen/Tools/storydroid_v1/IC3/'
+if 'Darwin' in os: # Macbook
+    java_home_path = '/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home'
+    sdk_platform_path = '/Users/chensen/Tools/storydistiller/config/libs/android-platforms/'
+    lib_home_path = '/Users/chensen/Tools/storydistiller/config/libs/'
+    callbacks_path = '/Users/chensen/Tools/storydistiller/config/AndroidCallbacks.txt'
+    jadx_path = '/Users/chensen/Tools/storydroid_v1/jadx-master/'
+    ic3_path = '/Users/chensen/Tools/storydroid_v1/IC3/'
 
 '''
 Rename the app name
@@ -271,6 +274,7 @@ def run_soot(output, apk_path, pkg_name, apk_name):
 
     '''
     Using jar
+    
     enhancedIC3_jar = output + 'config/run_soot.jar'
     os.chdir(output)
     os.system('java -jar %s %s %s %s %s %s %s' % (enhancedIC3_jar, output, apk_path, pkg_name, java_home_path, sdk_platform_path, lib_home_path))
@@ -373,9 +377,12 @@ def parse(dir, results_visulization_ICCs, dynamic_explore_result):
         return  union_list, static_list, new_unique_list, new_edge_list
 
 def getSootOutput(apk_path, apk_name):
-    # print sootOutput_dir
-    sootOutput_jar = output + '/config/getSootOutput.jar'
-    # print 'java -jar %s %s %s %s %s' % (sootOutput_jar, sootOutput_dir, apk_name, output, apk_path)
+    if 'Linux' in os:
+        sootOutput_jar = output + '/config/getSootOutput-Ubuntu.jar'
+    if 'Darwin' in os:
+        sootOutput_jar = output + '/config/getSootOutput-Macbook.jar'
+
+    print 'java -jar %s %s %s %s %s' % (sootOutput_jar, sootOutput_dir, apk_name, output, apk_path)
     os.chdir(output + '/config/')
     os.system('java -jar %s %s %s %s %s' % (sootOutput_jar, sootOutput_dir, apk_name, output, apk_path))
     print '[3] Get SootOutput and Check Layout Type: DONE'
@@ -383,9 +390,9 @@ def getSootOutput(apk_path, apk_name):
 
 if __name__ == '__main__':
 
-    output = sys.argv[1] # Main folder path
+    # output = sys.argv[1] # Main folder path
     # output = '/home/senchen/Desktop/storydistiller/'
-    # output = '/Users/chensen/Tools/storydistiller/'
+    output = '/Users/chensen/Tools/storydistiller/'
     # adb = sys.argv[2] # adb emulator
 
     adb = 'adb '
@@ -407,6 +414,10 @@ if __name__ == '__main__':
 
     for apk in os.listdir(apk_dir):
         if apk.endswith('.apk'):
+
+            root = 'adb -s %s root'  # root the emulator before running
+            print commands.getoutput(root)
+
             apk_path = apk_dir + apk
             org_apk_name = apk.split('.apk')[0]
 
@@ -479,7 +490,7 @@ if __name__ == '__main__':
             print 'soot pkg: ' + used_pkg_name
             run_soot(output, apk_path, used_pkg_name, apk_name)
             get_atgs(apk_name)
-            print '[8] Get CTGs is done'
+            print '[8] Get ATGs is done'
 
             print '[9] Start to get corresponding appstory ' + apk_name
             results_JavaCode = output + 'java_code/' + apk_name + '/'
@@ -518,8 +529,8 @@ if __name__ == '__main__':
             # print static_list
             # print 'New atgs: ' + str(len(new_unique_list))
             # print new_unique_list
-            #print 'New edges: ' + str(len(new_edge_list))
-            #print new_edge_list
+            # print 'New edges: ' + str(len(new_edge_list))
+            # print new_edge_list
 
             if all_acts != None:
                 # Get some statistics
