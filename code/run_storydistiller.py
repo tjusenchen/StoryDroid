@@ -10,6 +10,10 @@ import run_rpk_explore_apk
 import create_json_withindent
 import csv
 import os
+import sys
+
+#emulator = sys.argv[1]
+emulator = 'emulator-5554'
 
 launchActivity = ''
 defined_pkg_name = ''
@@ -270,7 +274,8 @@ Run soot
 '''
 def run_soot(output, apk_path, pkg_name, apk_name):
     results_enhancedIC3 = output + 'storydroid_atgs/' + apk_name + '.txt'
-    if os.path.exists(results_enhancedIC3):
+    results_enhancedIC3_label = output + 'outputs/' + apk_name + '/activity_paras.txt'
+    if os.path.exists(results_enhancedIC3_label):
         return
 
     '''
@@ -416,7 +421,7 @@ if __name__ == '__main__':
     for apk in os.listdir(apk_dir):
         if apk.endswith('.apk'):
 
-            root = 'adb -s %s root'  # root the emulator before running
+            root = 'adb -s %s root'%(emulator)  # root the emulator before running
             print commands.getoutput(root)
 
             apk_path = apk_dir + apk
