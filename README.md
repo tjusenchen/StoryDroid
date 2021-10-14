@@ -8,6 +8,7 @@ We have made the source code of StoryDistiller and the corresponding dataset pub
 * Android emulator：X86, Android 7.1.1, Google APIs, 1920 * 1080
 * Android environment: adb, aapt
 * Java environment (jdk): jdk1.8.0_45
+* pip install opencv-python==3.4.3.18
 
 ## Usage
 ```Python run_storydistiller.py [apk(s)_folder]```
