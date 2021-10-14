@@ -2,13 +2,14 @@
 Authors: Sen Chen and Lingling Fan
 '''
 # coding=utf-8
-import os, commands, collections, sys, platform
+import commands, collections, platform
 import shutil
 import traverse_tree
 import get_act_method_code
 import run_rpk_explore_apk
 import create_json_withindent
 import csv
+import os
 
 launchActivity = ''
 defined_pkg_name = ''
@@ -19,19 +20,19 @@ used_pkg_name = ''
 Ubuntu and Macbook
 '''
 
-os = platform.system()
+env_os = platform.system()
 
-print 'Current environment: ' + os
+print 'Current environment: ' + env_os
 
-if 'Linux' in os: # Ubuntu
+if 'Linux' in env_os: # Ubuntu
     java_home_path = '/usr/lib/jvm/jdk1.8.0_45'
-    sdk_platform_path = '/home/senchen/Desktop/storydistiller/config/libs/android-platforms/'
-    lib_home_path = '/home/senchen/Desktop/storydistiller/config/libs/'
-    callbacks_path = '/home/senchen/Desktop/storydistiller/config/AndroidCallbacks.txt'
-    jadx_path = '/home/senchen/Desktop/jadx-master/'
-    ic3_path = '/home/senchen/Desktop/IC3/'
+    sdk_platform_path = '/home/senchen/Engines/StoryDistiller/main-folder/config/libs/android-platforms/'
+    lib_home_path = '/home/senchen/Engines/StoryDistiller/main-folder/config/libs/'
+    callbacks_path = '/home/senchen/Engines/StoryDistiller/main-folder/config/AndroidCallbacks.txt'
+    jadx_path = '/home/senchen/Engines/StoryDistiller/jadx-master/'
+    ic3_path = '/home/senchen/Engines/StoryDistiller/IC3/'
 
-if 'Darwin' in os: # Macbook
+if 'Darwin' in env_os: # Macbook
     java_home_path = '/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home'
     sdk_platform_path = '/Users/chensen/Tools/storydistiller/config/libs/android-platforms/'
     lib_home_path = '/Users/chensen/Tools/storydistiller/config/libs/'
@@ -377,9 +378,9 @@ def parse(dir, results_visulization_ICCs, dynamic_explore_result):
         return  union_list, static_list, new_unique_list, new_edge_list
 
 def getSootOutput(apk_path, apk_name):
-    if 'Linux' in os:
+    if 'Linux' in env_os:
         sootOutput_jar = output + '/config/getSootOutput-Ubuntu.jar'
-    if 'Darwin' in os:
+    if 'Darwin' in env_os:
         sootOutput_jar = output + '/config/getSootOutput-Macbook.jar'
 
     print 'java -jar %s %s %s %s %s' % (sootOutput_jar, sootOutput_dir, apk_name, output, apk_path)
@@ -391,8 +392,8 @@ def getSootOutput(apk_path, apk_name):
 if __name__ == '__main__':
 
     # output = sys.argv[1] # Main folder path
-    # output = '/home/senchen/Desktop/storydistiller/'
-    output = '/Users/chensen/Tools/storydistiller/'
+    output = '/home/senchen/Engines/StoryDistiller/main-folder/'
+    #output = '/Users/chensen/Tools/storydistiller/'
     # adb = sys.argv[2] # adb emulator
 
     adb = 'adb '
