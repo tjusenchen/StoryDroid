@@ -502,6 +502,14 @@ if __name__ == '__main__':
             results_JavaCode = output + 'java_code/' + apk_name + '/'
             result_apkfolder = output + 'outputs/' + apk_name + '/'
             results_visulization_ICCs = result_apkfolder + apk_name + '_atgs.txt'
+
+            # copy apk_name + '_atgs' as apk_name + '_atgs_static'
+            results_visulization_ICCs_static = result_apkfolder + apk_name + '_atgs_static.txt'
+            if os.path.exists(results_visulization_ICCs):
+                os.system('cp %s %s' % (results_visulization_ICCs, results_visulization_ICCs_static))
+
+
+
             processed_cg_file = result_apkfolder + apk_name + '_cgs.txt'
             if os.path.exists(results_JavaCode):
                 get_act_method_code.main(results_JavaCode, result_apkfolder, results_visulization_ICCs, processed_cg_file, launchActivity)
@@ -552,6 +560,13 @@ if __name__ == '__main__':
                 # Print act_not_launched
                 csv.writer(open(out_csv, 'a')).writerow((apk_name, used_pkg_name, len(all_acts), launched_act_num, act_not_in_atg, act_not_launched,
                                                          str(len(union_list)), str(len(static_list)), str(len(new_unique_list))))
+
+            # if _atg_dynamic exist, copy it to _atgs
+            results_visulization_ICCs_dynamic = result_apkfolder + apk_name + '_atgs_dynamic.txt'
+            if os.path.exists(results_visulization_ICCs_dynamic):
+                lines = open(results_visulization_ICCs_dynamic, 'r').readlines()
+                for line in lines:
+                    open(results_visulization_ICCs, 'ab').write(line.split('->')[0] + '-->' + line.split('->')[-1])
 
             ####HTML, Webpage generation####
             print '[12] Get Json'
