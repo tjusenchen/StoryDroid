@@ -32,7 +32,7 @@ https://sites.google.com/view/storydistiller/
 [2] Automatically Distilling Storyboard with Rich Features for Android Apps
 ```
 @inproceedings{chen2019storydistiller,
-  title={Storydroid: Automated generation of storyboard for Android apps},
+  title={Automatically Distilling Storyboard with Rich Features for Android Apps},
   author={Chen, Sen and Fan, Lingling and Chen, Chunyang and Liu, Yang},
   booktitle={IEEE Transactions on Software Engineering (TSE)},
   year={2022},
