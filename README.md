@@ -1,5 +1,5 @@
-# StoryDistiller
-We have made the source code of StoryDistiller and the corresponding dataset publicly available. We hope this project can benefit other researchers or practiontiners in the field of analysis of Android apps. Please feel free to contact us if you have any questions and issues. We will continue to maintain this project. Thanks for your feedback.
+# StoryDroid
+We have made the source code of StoryDroid and the corresponding dataset publicly available. We hope this project can benefit other researchers or practiontiners in the field of analysis of Android apps. Please feel free to contact us if you have any questions and issues. We will continue to maintain this project. Thanks for your feedback.
 
 ## Environment Configuration
 * Ubuntu/Macbook
@@ -37,6 +37,18 @@ https://sites.google.com/view/storydistiller/
   booktitle={IEEE Transactions on Software Engineering (TSE)},
   year={2022},
   organization={IEEE}
+}
+```
+
+[1] StoryDroid: An Offline Platform for Generating Storyboard for Android Apps (Under Submission)
+```
+@inproceedings{zhang22storydroid,
+  title={StoryDroid: An Offline Platform for Generating Storyboard for Android Apps},
+  author={Zhang, Yuxin, Chen, Sen and Fan, Lingling and Chen, Chunyang},
+  booktitle={2022 ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)},
+  pages={0--4},
+  year={2022},
+  organization={ACM}
 }
 ```
 ## Contact
