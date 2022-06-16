@@ -40,7 +40,7 @@ https://sites.google.com/view/storydistiller/
 }
 ```
 
-[1] StoryDroid: An Offline Platform for Generating Storyboard for Android Apps (Under Submission)
+[3] StoryDroid: An Offline Platform for Generating Storyboard for Android Apps (Under Submission)
 ```
 @inproceedings{zhang22storydroid,
   title={StoryDroid: An Offline Platform for Generating Storyboard for Android Apps},
