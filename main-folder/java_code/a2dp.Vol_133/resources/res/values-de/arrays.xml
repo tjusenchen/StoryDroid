@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="PrefsNotifyItems">
+        <item>always</item>
+        <item>connected_only</item>
+        <item>never</item>
+    </array>
+    <array name="PrefsNotifyOptions">
+        <item>Der Dienst startet im Vordergrund und zeigt ein Icon in der Benachrichtigungsleiste.</item>
+        <item>Das Icon wird nur angezeigt, wenn Geräte verbunden sind.</item>
+        <item>Der Dienst startet im Hintergrund und zeigt kein Icon in der Benachrichtigungsleiste.</item>
+    </array>
+    <array name="gpsDistance">
+        <item>2 m</item>
+        <item>5 m</item>
+        <item>10 m</item>
+        <item>15 m</item>
+        <item>20 m</item>
+        <item>30 m</item>
+    </array>
+    <array name="gpsDistance_items">
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>30</item>
+    </array>
+    <array name="gpsTimeout">
+        <item>GPS-Listener deaktivieren</item>
+        <item>5 Sekunden</item>
+        <item>10 Sekunden</item>
+        <item>15 Sekunden</item>
+        <item>20 Sekunden</item>
+        <item>30 Sekunden</item>
+        <item>45 Sekunden</item>
+    </array>
+    <array name="gpsTimeout_items">
+        <item>@null</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>15000</item>
+        <item>20000</item>
+        <item>30000</item>
+        <item>45000</item>
+    </array>
+</resources>

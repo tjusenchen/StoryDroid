@@ -1,0 +1,3940 @@
+name: "a2dp.Vol"
+version: 133
+used_permissions: "android.permission.RECEIVE_SMS"
+used_permissions: "com.android.launcher.permission.READ_SETTINGS"
+used_permissions: "android.permission.READ_CONTACTS"
+used_permissions: "android.permission.GET_ACCOUNTS"
+used_permissions: "android.permission.BLUETOOTH_ADMIN"
+used_permissions: "android.permission.RECEIVE_BOOT_COMPLETED"
+used_permissions: "android.permission.WRITE_EXTERNAL_STORAGE"
+used_permissions: "android.permission.BROADCAST_STICKY"
+used_permissions: "android.permission.KILL_BACKGROUND_PROCESSES"
+used_permissions: "android.permission.ACCESS_FINE_LOCATION"
+used_permissions: "android.permission.CHANGE_WIFI_STATE"
+used_permissions: "android.permission.ACCESS_COARSE_LOCATION"
+used_permissions: "android.permission.ACCESS_WIFI_STATE"
+used_permissions: "android.permission.MODIFY_AUDIO_SETTINGS"
+used_permissions: "android.permission.BLUETOOTH"
+used_permissions: "android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"
+used_permissions: "android.permission.READ_PHONE_STATE"
+components {
+  name: "a2dp.Vol.AppChooser"
+  kind: ACTIVITY
+  exported: false
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r22.<a2dp.Vol.main: void startActivity(android.content.Intent)>(r33)"
+      class_name: "a2dp.Vol.main$4$1"
+      method: "<a2dp.Vol.main$4$1: void onClick(android.content.DialogInterface,int)>"
+      id: 37
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: TYPE
+        value: "text/html"
+      }
+      attributes {
+        kind: CLASS
+        value: "com.google.android.apps.chrome.Main"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "com.android.chrome"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: TYPE
+        value: "text/html"
+      }
+      attributes {
+        kind: CLASS
+        value: "com.android.browser.BrowserActivity"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "com.android.browser"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r41.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r43, 2)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 10
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/AppChooser;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r13.<a2dp.Vol.main: void startActivity(android.content.Intent)>(r17)"
+      class_name: "a2dp.Vol.main"
+      method: "<a2dp.Vol.main: void Locationbtn()>"
+      id: 12
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r60.<a2dp.Vol.MyApplication: void sendBroadcast(android.content.Intent)>(r1)"
+      class_name: "a2dp.Vol.EditDevice"
+      method: "<a2dp.Vol.EditDevice: void Save()>"
+      id: 120
+    }
+    kind: RECEIVER
+    intents {
+      attributes {
+        kind: ACTION
+        value: "a2dp.Vol.main.RELOAD_LIST"
+      }
+      attributes {
+        kind: EXTRA
+        value: "device"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r2.<a2dp.Vol.main: void startActivityForResult(android.content.Intent,int)>(r4, 3)"
+      class_name: "a2dp.Vol.main$10"
+      method: "<a2dp.Vol.main$10: void onClick(android.content.DialogInterface,int)>"
+      id: 7
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.speech.tts.engine.INSTALL_TTS_DATA"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r29.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r46, 11)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 39
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: EXTRA
+        value: "extra_provider"
+      }
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/ProviderList;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r5.<a2dp.Vol.main: android.content.ComponentName startService(android.content.Intent)>($r3)"
+      class_name: "a2dp.Vol.main$8"
+      method: "<a2dp.Vol.main$8: void onClick(android.view.View)>"
+      id: 15
+    }
+    kind: SERVICE
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/service;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r34.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r45, 11)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 29
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: EXTRA
+        value: "extra_provider"
+      }
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/ProviderList;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r3.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r5, 17)"
+      class_name: "a2dp.Vol.EditDevice$12"
+      method: "<a2dp.Vol.EditDevice$12: void onClick(android.content.DialogInterface,int)>"
+      id: 8
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/AppChooser;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r0.<a2dp.Vol.main: void startActivityForResult(android.content.Intent,int)>(r66, 1)"
+      class_name: "a2dp.Vol.main"
+      method: "<a2dp.Vol.main: int getBtDevices(int)>"
+      id: 111
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.bluetooth.adapter.action.REQUEST_ENABLE"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r24.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r47, 6)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 58
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: EXTRA
+        value: "alarm_custom_data"
+        value: "alarm_custom_action"
+        value: "alarm_package_name"
+        value: "alarm_custom_type"
+      }
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/CustomIntentMaker;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r7.<a2dp.Vol.main: void startActivityForResult(android.content.Intent,int)>(r9, 4)"
+      class_name: "a2dp.Vol.main$5$2"
+      method: "<a2dp.Vol.main$5$2: void onClick(android.content.DialogInterface,int)>"
+      id: 12
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: EXTRA
+        value: "btd"
+      }
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/EditDevice;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r14.<a2dp.Vol.CustomIntentMaker: void startActivity(android.content.Intent)>(r29)"
+      class_name: "a2dp.Vol.CustomIntentMaker$3"
+      method: "<a2dp.Vol.CustomIntentMaker$3: void onClick(android.view.View)>"
+      id: 37
+    }
+    kind: ACTIVITY
+    intents {
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+    }
+    intents {
+      attributes {
+        kind: CATEGORY
+        value: ""
+      }
+    }
+    intents {
+      attributes {
+        kind: TYPE
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "custom"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: ""
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: CATEGORY
+        value: ""
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: ""
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "custom"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "(.*)"
+      }
+      attributes {
+        kind: CATEGORY
+        value: ""
+      }
+    }
+    intents {
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "(.*)"
+      }
+      attributes {
+        kind: CATEGORY
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "(.*)"
+      }
+      attributes {
+        kind: CATEGORY
+        value: ""
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: ""
+      }
+      attributes {
+        kind: CATEGORY
+        value: ""
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "NULL-CONSTANT"
+      }
+      attributes {
+        kind: CATEGORY
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: ""
+      }
+      attributes {
+        kind: CATEGORY
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: ""
+      }
+      attributes {
+        kind: CATEGORY
+        value: ""
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: CATEGORY
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: CATEGORY
+        value: ""
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "(.*)"
+      }
+      attributes {
+        kind: TYPE
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "(.*)"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: CATEGORY
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: CATEGORY
+        value: ""
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "NULL-CONSTANT"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: ""
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "NULL-CONSTANT"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "NULL-CONSTANT"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r38.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r44, 14)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 19
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.PICK_ACTIVITY"
+      }
+      attributes {
+        kind: EXTRA
+        value: "android.intent.extra.INTENT"
+        value: "android.intent.extra.TITLE"
+      }
+    }
+  }
+}
+components {
+  name: "a2dp.Vol.NotificationCatcher"
+  kind: SERVICE
+  exported: true
+  permission: "android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.service.notification.NotificationListenerService"
+    }
+  }
+}
+components {
+  name: "a2dp.Vol.Widget"
+  kind: RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.appwidget.action.APPWIDGET_UPDATE"
+    }
+  }
+}
+components {
+  name: "a2dp.Vol.Starter"
+  kind: RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.BOOT_COMPLETED"
+      value: "android.intent.action.MY_PACKAGE_REPLACED"
+    }
+    attributes {
+      kind: CATEGORY
+      value: "android.intent.category.HOME"
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r1.<android.content.Context: android.content.ComponentName startService(android.content.Intent)>($r5)"
+      class_name: "a2dp.Vol.Starter"
+      method: "<a2dp.Vol.Starter: void onReceive(android.content.Context,android.content.Intent)>"
+      id: 10
+    }
+    kind: SERVICE
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/service;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+}
+components {
+  name: "a2dp.Vol.EditDevice"
+  kind: ACTIVITY
+  exported: false
+  extras {
+    extra: "extra_package_name"
+    instruction {
+      statement: "$r11 = virtualinvoke r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>($r10)"
+      class_name: "a2dp.Vol.EditDevice"
+      method: "<a2dp.Vol.EditDevice: void processShortcut(android.content.Intent)>"
+      id: 10
+    }
+  }
+  extras {
+    extra: "package_name"
+    instruction {
+      statement: "$r13 = virtualinvoke r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>(\"package_name\")"
+      class_name: "a2dp.Vol.EditDevice"
+      method: "<a2dp.Vol.EditDevice: void onActivityResult(int,int,android.content.Intent)>"
+      id: 8
+    }
+  }
+  extras {
+    extra: "package_name"
+    instruction {
+      statement: "$r2 = virtualinvoke r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>(\"package_name\")"
+      class_name: "a2dp.Vol.EditDevice"
+      method: "<a2dp.Vol.EditDevice: void onActivityResult(int,int,android.content.Intent)>"
+      id: 15
+    }
+  }
+  extras {
+    extra: "android.intent.extra.shortcut.INTENT"
+    instruction {
+      statement: "$r3 = virtualinvoke r1.<android.content.Intent: android.os.Parcelable getParcelableExtra(java.lang.String)>(\"android.intent.extra.shortcut.INTENT\")"
+      class_name: "a2dp.Vol.EditDevice"
+      method: "<a2dp.Vol.EditDevice: void processShortcut(android.content.Intent)>"
+      id: 2
+    }
+  }
+  extras {
+    extra: "package_name"
+    instruction {
+      statement: "$r3 = virtualinvoke r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>(\"package_name\")"
+      class_name: "a2dp.Vol.EditDevice"
+      method: "<a2dp.Vol.EditDevice: void onActivityResult(int,int,android.content.Intent)>"
+      id: 19
+    }
+  }
+  extras {
+    extra: "alarm_custom_action"
+    instruction {
+      statement: "$r6 = virtualinvoke r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>(\"alarm_custom_action\")"
+      class_name: "a2dp.Vol.EditDevice"
+      method: "<a2dp.Vol.EditDevice: void onActivityResult(int,int,android.content.Intent)>"
+      id: 26
+    }
+  }
+  extras {
+    extra: "alarm_custom_data"
+    instruction {
+      statement: "$r7 = virtualinvoke r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>(\"alarm_custom_data\")"
+      class_name: "a2dp.Vol.EditDevice"
+      method: "<a2dp.Vol.EditDevice: void onActivityResult(int,int,android.content.Intent)>"
+      id: 28
+    }
+  }
+  extras {
+    extra: "btd"
+    instruction {
+      statement: "$r96 = virtualinvoke $r95.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>(\"btd\")"
+      class_name: "a2dp.Vol.EditDevice"
+      method: "<a2dp.Vol.EditDevice: void onCreate(android.os.Bundle)>"
+      id: 149
+    }
+  }
+  extras {
+    extra: "android.intent.extra.shortcut.NAME"
+    instruction {
+      statement: "$r9 = virtualinvoke r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>(\"android.intent.extra.shortcut.NAME\")"
+      class_name: "a2dp.Vol.EditDevice"
+      method: "<a2dp.Vol.EditDevice: void processShortcut(android.content.Intent)>"
+      id: 16
+    }
+  }
+  extras {
+    extra: "alarm_custom_type"
+    instruction {
+      statement: "$r8 = virtualinvoke r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>(\"alarm_custom_type\")"
+      class_name: "a2dp.Vol.EditDevice"
+      method: "<a2dp.Vol.EditDevice: void onActivityResult(int,int,android.content.Intent)>"
+      id: 30
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r22.<a2dp.Vol.main: void startActivity(android.content.Intent)>(r33)"
+      class_name: "a2dp.Vol.main$4$1"
+      method: "<a2dp.Vol.main$4$1: void onClick(android.content.DialogInterface,int)>"
+      id: 37
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: TYPE
+        value: "text/html"
+      }
+      attributes {
+        kind: CLASS
+        value: "com.google.android.apps.chrome.Main"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "com.android.chrome"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: TYPE
+        value: "text/html"
+      }
+      attributes {
+        kind: CLASS
+        value: "com.android.browser.BrowserActivity"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "com.android.browser"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r41.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r43, 2)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 10
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/AppChooser;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r60.<a2dp.Vol.MyApplication: void sendBroadcast(android.content.Intent)>(r1)"
+      class_name: "a2dp.Vol.EditDevice"
+      method: "<a2dp.Vol.EditDevice: void Save()>"
+      id: 120
+    }
+    kind: RECEIVER
+    intents {
+      attributes {
+        kind: ACTION
+        value: "a2dp.Vol.main.RELOAD_LIST"
+      }
+      attributes {
+        kind: EXTRA
+        value: "device"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r2.<a2dp.Vol.main: void startActivityForResult(android.content.Intent,int)>(r4, 3)"
+      class_name: "a2dp.Vol.main$10"
+      method: "<a2dp.Vol.main$10: void onClick(android.content.DialogInterface,int)>"
+      id: 7
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.speech.tts.engine.INSTALL_TTS_DATA"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r29.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r46, 11)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 39
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: EXTRA
+        value: "extra_provider"
+      }
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/ProviderList;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r34.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r45, 11)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 29
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: EXTRA
+        value: "extra_provider"
+      }
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/ProviderList;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r3.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r5, 17)"
+      class_name: "a2dp.Vol.EditDevice$12"
+      method: "<a2dp.Vol.EditDevice$12: void onClick(android.content.DialogInterface,int)>"
+      id: 8
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/AppChooser;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r24.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r47, 6)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 58
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: EXTRA
+        value: "alarm_custom_data"
+        value: "alarm_custom_action"
+        value: "alarm_package_name"
+        value: "alarm_custom_type"
+      }
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/CustomIntentMaker;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r7.<a2dp.Vol.main: void startActivityForResult(android.content.Intent,int)>(r9, 4)"
+      class_name: "a2dp.Vol.main$5$2"
+      method: "<a2dp.Vol.main$5$2: void onClick(android.content.DialogInterface,int)>"
+      id: 12
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: EXTRA
+        value: "btd"
+      }
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/EditDevice;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r0.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r1, 15)"
+      class_name: "a2dp.Vol.EditDevice"
+      method: "<a2dp.Vol.EditDevice: void onActivityResult(int,int,android.content.Intent)>"
+      id: 50
+    }
+    kind: ACTIVITY
+    intents {
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r38.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r44, 14)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 19
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.PICK_ACTIVITY"
+      }
+      attributes {
+        kind: EXTRA
+        value: "android.intent.extra.INTENT"
+        value: "android.intent.extra.TITLE"
+      }
+    }
+  }
+}
+components {
+  name: "a2dp.Vol.ManageData"
+  kind: ACTIVITY
+  exported: false
+}
+components {
+  name: "a2dp.Vol.service"
+  kind: SERVICE
+  exported: false
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r10.<a2dp.Vol.MyApplication: void sendBroadcast(android.content.Intent)>(r19)"
+      class_name: "a2dp.Vol.service"
+      method: "<a2dp.Vol.service: void onDestroy()>"
+      id: 39
+    }
+    kind: RECEIVER
+    intents {
+      attributes {
+        kind: ACTION
+        value: "a2dp.vol.service.STOPPED_RUNNING"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r22.<a2dp.Vol.MyApplication: void sendBroadcast(android.content.Intent)>(r74)"
+      class_name: "a2dp.Vol.service"
+      method: "<a2dp.Vol.service: void onCreate()>"
+      id: 123
+    }
+    kind: RECEIVER
+    intents {
+      attributes {
+        kind: ACTION
+        value: "a2dp.vol.service.RUNNING"
+      }
+    }
+  }
+}
+components {
+  name: "a2dp.Vol.ALauncher"
+  kind: SERVICE
+  exported: false
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r0.<a2dp.Vol.ALauncher: void startActivity(android.content.Intent)>(r11)"
+      class_name: "a2dp.Vol.ALauncher"
+      method: "<a2dp.Vol.ALauncher: void onCreate()>"
+      id: 12
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: FLAG
+        int_value: 268435456
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+  }
+}
+components {
+  name: "a2dp.Vol.PackagesChooser"
+  kind: ACTIVITY
+  exported: false
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r9.<a2dp.Vol.MyApplication: void sendBroadcast(android.content.Intent)>(r24)"
+      class_name: "a2dp.Vol.PackagesChooser"
+      method: "<a2dp.Vol.PackagesChooser: void cleanup()>"
+      id: 44
+    }
+    kind: RECEIVER
+    intents {
+      attributes {
+        kind: ACTION
+        value: "a2dp.vol.Reload"
+      }
+    }
+  }
+}
+components {
+  name: "a2dp.Vol.CustomIntentMaker"
+  kind: ACTIVITY
+  exported: false
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r22.<a2dp.Vol.main: void startActivity(android.content.Intent)>(r33)"
+      class_name: "a2dp.Vol.main$4$1"
+      method: "<a2dp.Vol.main$4$1: void onClick(android.content.DialogInterface,int)>"
+      id: 37
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: TYPE
+        value: "text/html"
+      }
+      attributes {
+        kind: CLASS
+        value: "com.google.android.apps.chrome.Main"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "com.android.chrome"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: TYPE
+        value: "text/html"
+      }
+      attributes {
+        kind: CLASS
+        value: "com.android.browser.BrowserActivity"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "com.android.browser"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r41.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r43, 2)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 10
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/AppChooser;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r13.<a2dp.Vol.main: void startActivity(android.content.Intent)>(r17)"
+      class_name: "a2dp.Vol.main"
+      method: "<a2dp.Vol.main: void Locationbtn()>"
+      id: 12
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r60.<a2dp.Vol.MyApplication: void sendBroadcast(android.content.Intent)>(r1)"
+      class_name: "a2dp.Vol.EditDevice"
+      method: "<a2dp.Vol.EditDevice: void Save()>"
+      id: 120
+    }
+    kind: RECEIVER
+    intents {
+      attributes {
+        kind: ACTION
+        value: "a2dp.Vol.main.RELOAD_LIST"
+      }
+      attributes {
+        kind: EXTRA
+        value: "device"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r2.<a2dp.Vol.main: void startActivityForResult(android.content.Intent,int)>(r4, 3)"
+      class_name: "a2dp.Vol.main$10"
+      method: "<a2dp.Vol.main$10: void onClick(android.content.DialogInterface,int)>"
+      id: 7
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.speech.tts.engine.INSTALL_TTS_DATA"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r29.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r46, 11)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 39
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: EXTRA
+        value: "extra_provider"
+      }
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/ProviderList;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r5.<a2dp.Vol.main: android.content.ComponentName startService(android.content.Intent)>($r3)"
+      class_name: "a2dp.Vol.main$8"
+      method: "<a2dp.Vol.main$8: void onClick(android.view.View)>"
+      id: 15
+    }
+    kind: SERVICE
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/service;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r34.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r45, 11)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 29
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: EXTRA
+        value: "extra_provider"
+      }
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/ProviderList;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r3.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r5, 17)"
+      class_name: "a2dp.Vol.EditDevice$12"
+      method: "<a2dp.Vol.EditDevice$12: void onClick(android.content.DialogInterface,int)>"
+      id: 8
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/AppChooser;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r0.<a2dp.Vol.main: void startActivityForResult(android.content.Intent,int)>(r66, 1)"
+      class_name: "a2dp.Vol.main"
+      method: "<a2dp.Vol.main: int getBtDevices(int)>"
+      id: 111
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.bluetooth.adapter.action.REQUEST_ENABLE"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r24.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r47, 6)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 58
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: EXTRA
+        value: "alarm_custom_data"
+        value: "alarm_custom_action"
+        value: "alarm_package_name"
+        value: "alarm_custom_type"
+      }
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/CustomIntentMaker;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r7.<a2dp.Vol.main: void startActivityForResult(android.content.Intent,int)>(r9, 4)"
+      class_name: "a2dp.Vol.main$5$2"
+      method: "<a2dp.Vol.main$5$2: void onClick(android.content.DialogInterface,int)>"
+      id: 12
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: EXTRA
+        value: "btd"
+      }
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/EditDevice;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r14.<a2dp.Vol.CustomIntentMaker: void startActivity(android.content.Intent)>(r29)"
+      class_name: "a2dp.Vol.CustomIntentMaker$3"
+      method: "<a2dp.Vol.CustomIntentMaker$3: void onClick(android.view.View)>"
+      id: 37
+    }
+    kind: ACTIVITY
+    intents {
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+    }
+    intents {
+      attributes {
+        kind: CATEGORY
+        value: ""
+      }
+    }
+    intents {
+      attributes {
+        kind: TYPE
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "custom"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: ""
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: CATEGORY
+        value: ""
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: ""
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "custom"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "(.*)"
+      }
+      attributes {
+        kind: CATEGORY
+        value: ""
+      }
+    }
+    intents {
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "(.*)"
+      }
+      attributes {
+        kind: CATEGORY
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "(.*)"
+      }
+      attributes {
+        kind: CATEGORY
+        value: ""
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: ""
+      }
+      attributes {
+        kind: CATEGORY
+        value: ""
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "NULL-CONSTANT"
+      }
+      attributes {
+        kind: CATEGORY
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: ""
+      }
+      attributes {
+        kind: CATEGORY
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: ""
+      }
+      attributes {
+        kind: CATEGORY
+        value: ""
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: CATEGORY
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: CATEGORY
+        value: ""
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "(.*)"
+      }
+      attributes {
+        kind: TYPE
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "(.*)"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: CATEGORY
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: CATEGORY
+        value: ""
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "NULL-CONSTANT"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: ""
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "NULL-CONSTANT"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "NULL-CONSTANT"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r38.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r44, 14)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 19
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.PICK_ACTIVITY"
+      }
+      attributes {
+        kind: EXTRA
+        value: "android.intent.extra.INTENT"
+        value: "android.intent.extra.TITLE"
+      }
+    }
+  }
+}
+components {
+  name: "a2dp.Vol.StoreLoc"
+  kind: SERVICE
+  exported: false
+  extras {
+    extra: "device"
+    instruction {
+      statement: "r43 = virtualinvoke r1.<android.content.Intent: java.lang.String getStringExtra(java.lang.String)>(\"device\")"
+      class_name: "a2dp.Vol.StoreLoc"
+      method: "<a2dp.Vol.StoreLoc: int onStartCommand(android.content.Intent,int,int)>"
+      id: 39
+    }
+  }
+}
+components {
+  name: "a2dp.Vol.main"
+  kind: ACTIVITY
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.MAIN"
+    }
+    attributes {
+      kind: CATEGORY
+      value: "android.intent.category.LAUNCHER"
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r22.<a2dp.Vol.main: void startActivity(android.content.Intent)>(r33)"
+      class_name: "a2dp.Vol.main$4$1"
+      method: "<a2dp.Vol.main$4$1: void onClick(android.content.DialogInterface,int)>"
+      id: 37
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: TYPE
+        value: "text/html"
+      }
+      attributes {
+        kind: CLASS
+        value: "com.google.android.apps.chrome.Main"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "com.android.chrome"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: TYPE
+        value: "text/html"
+      }
+      attributes {
+        kind: CLASS
+        value: "com.android.browser.BrowserActivity"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "com.android.browser"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r0.<a2dp.Vol.main: void startActivity(android.content.Intent)>($r2)"
+      class_name: "a2dp.Vol.main"
+      method: "<a2dp.Vol.main: boolean onOptionsItemSelected(android.view.MenuItem)>"
+      id: 42
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "https://github.com/jroal/a2dpvolume/wiki"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r41.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r43, 2)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 10
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/AppChooser;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r13.<a2dp.Vol.main: void startActivity(android.content.Intent)>(r17)"
+      class_name: "a2dp.Vol.main"
+      method: "<a2dp.Vol.main: void Locationbtn()>"
+      id: 12
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r2.<a2dp.Vol.main: void startActivityForResult(android.content.Intent,int)>(r4, 3)"
+      class_name: "a2dp.Vol.main$10"
+      method: "<a2dp.Vol.main$10: void onClick(android.content.DialogInterface,int)>"
+      id: 7
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.speech.tts.engine.INSTALL_TTS_DATA"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r22.<a2dp.Vol.main: void startActivity(android.content.Intent)>(r23)"
+      class_name: "a2dp.Vol.main$7"
+      method: "<a2dp.Vol.main$7: boolean onLongClick(android.view.View)>"
+      id: 17
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.VIEW"
+      }
+      attributes {
+        kind: URI
+        value: "(.*)"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r29.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r46, 11)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 39
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: EXTRA
+        value: "extra_provider"
+      }
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/ProviderList;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r5.<a2dp.Vol.main: android.content.ComponentName startService(android.content.Intent)>($r3)"
+      class_name: "a2dp.Vol.main$8"
+      method: "<a2dp.Vol.main$8: void onClick(android.view.View)>"
+      id: 15
+    }
+    kind: SERVICE
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/service;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r34.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r45, 11)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 29
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: EXTRA
+        value: "extra_provider"
+      }
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/ProviderList;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r3.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r5, 17)"
+      class_name: "a2dp.Vol.EditDevice$12"
+      method: "<a2dp.Vol.EditDevice$12: void onClick(android.content.DialogInterface,int)>"
+      id: 8
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/AppChooser;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r0.<a2dp.Vol.main: void startActivityForResult(android.content.Intent,int)>(r66, 1)"
+      class_name: "a2dp.Vol.main"
+      method: "<a2dp.Vol.main: int getBtDevices(int)>"
+      id: 111
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.bluetooth.adapter.action.REQUEST_ENABLE"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r24.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r47, 6)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 58
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: EXTRA
+        value: "alarm_custom_data"
+        value: "alarm_custom_action"
+        value: "alarm_package_name"
+        value: "alarm_custom_type"
+      }
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/CustomIntentMaker;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r0.<a2dp.Vol.main: void startActivityForResult(android.content.Intent,int)>(r100, 3)"
+      class_name: "a2dp.Vol.main"
+      method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+      id: 118
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.speech.tts.engine.CHECK_TTS_DATA"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.ComponentName startService(android.content.Intent)>($r70)"
+      class_name: "a2dp.Vol.main"
+      method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+      id: 121
+    }
+    kind: SERVICE
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/NotificationCatcher;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r7.<a2dp.Vol.main: void startActivityForResult(android.content.Intent,int)>(r9, 4)"
+      class_name: "a2dp.Vol.main$5$2"
+      method: "<a2dp.Vol.main$5$2: void onClick(android.content.DialogInterface,int)>"
+      id: 12
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: EXTRA
+        value: "btd"
+      }
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/EditDevice;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r0.<a2dp.Vol.main: void startActivityForResult(android.content.Intent,int)>($r7, 2)"
+      class_name: "a2dp.Vol.main"
+      method: "<a2dp.Vol.main: boolean onOptionsItemSelected(android.view.MenuItem)>"
+      id: 11
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/ManageData;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r0.<a2dp.Vol.main: void startActivity(android.content.Intent)>($r1)"
+      class_name: "a2dp.Vol.main"
+      method: "<a2dp.Vol.main: boolean onOptionsItemSelected(android.view.MenuItem)>"
+      id: 20
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/PackagesChooser;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.ComponentName startService(android.content.Intent)>($r68)"
+      class_name: "a2dp.Vol.main"
+      method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+      id: 112
+    }
+    kind: SERVICE
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/service;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r0.<a2dp.Vol.main: void startActivityForResult(android.content.Intent,int)>(r32, 3)"
+      class_name: "a2dp.Vol.main"
+      method: "<a2dp.Vol.main: void onActivityResult(int,int,android.content.Intent)>"
+      id: 15
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.speech.tts.engine.CHECK_TTS_DATA"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r38.<a2dp.Vol.EditDevice: void startActivityForResult(android.content.Intent,int)>(r44, 14)"
+      class_name: "a2dp.Vol.EditDevice$11"
+      method: "<a2dp.Vol.EditDevice$11: void onClick(android.content.DialogInterface,int)>"
+      id: 19
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: ACTION
+        value: "android.intent.action.PICK_ACTIVITY"
+      }
+      attributes {
+        kind: EXTRA
+        value: "android.intent.extra.INTENT"
+        value: "android.intent.extra.TITLE"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r0.<a2dp.Vol.main: void startActivity(android.content.Intent)>($r16)"
+      class_name: "a2dp.Vol.main"
+      method: "<a2dp.Vol.main: boolean onOptionsItemSelected(android.view.MenuItem)>"
+      id: 24
+    }
+    kind: ACTIVITY
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/Preferences;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+}
+components {
+  name: "a2dp.Vol.Preferences"
+  kind: ACTIVITY
+  exported: false
+  exit_points {
+    instruction {
+      statement: "virtualinvoke r0.<a2dp.Vol.Preferences: android.content.ComponentName startService(android.content.Intent)>($r4)"
+      class_name: "a2dp.Vol.Preferences"
+      method: "<a2dp.Vol.Preferences: void onDestroy()>"
+      id: 6
+    }
+    kind: SERVICE
+    intents {
+      attributes {
+        kind: CLASS
+        value: "La2dp/Vol/service;"
+      }
+      attributes {
+        kind: PACKAGE
+        value: "a2dp.Vol"
+      }
+    }
+  }
+  exit_points {
+    instruction {
+      statement: "virtualinvoke $r9.<a2dp.Vol.MyApplication: void sendBroadcast(android.content.Intent)>(r1)"
+      class_name: "a2dp.Vol.Preferences"
+      method: "<a2dp.Vol.Preferences: void onDestroy()>"
+      id: 14
+    }
+    kind: RECEIVER
+    intents {
+      attributes {
+        kind: ACTION
+        value: "a2dp.vol.preferences.UPDATED"
+      }
+    }
+  }
+}
+components {
+  name: "a2dp.Vol.ProviderList"
+  kind: ACTIVITY
+  exported: false
+  exit_points {
+    instruction {
+      statement: "r27 = virtualinvoke $r1.<android.content.ContentResolver: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>($r4, r26, $r12, null, null)"
+      class_name: "a2dp.Vol.ProviderList"
+      method: "<a2dp.Vol.ProviderList: void onListItemClick(android.widget.ListView,android.view.View,int,long)>"
+      id: 25
+    }
+    kind: PROVIDER
+    uris {
+      attributes {
+        kind: URI
+        value: "content://com.htc.launcher.settings/favorites"
+      }
+    }
+    uris {
+      attributes {
+        kind: URI
+        value: "content://com.android.launcher2.settings/favorites"
+      }
+    }
+    uris {
+      attributes {
+        kind: URI
+        value: "content://com.pandora.provider/stations"
+      }
+    }
+    uris {
+      attributes {
+        kind: URI
+        value: "content://com.google.android.apps.listen.PodcastProvider/item"
+      }
+    }
+    uris {
+      attributes {
+        kind: URI
+        value: "content://com.android.launcher.settings/favorites"
+      }
+    }
+  }
+}
+components {
+  name: "a2dp.Vol.NotificationCatcher$2"
+  kind: DYNAMIC_RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.CLEAR"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.STOPPED_RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.adapter.action.STATE_CHANGED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.Vol.main.RELOAD_LIST"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.HEADSET_PLUG"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.preferences.UPDATED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  registration_instruction {
+    statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r41, r99)"
+    class_name: "a2dp.Vol.main"
+    method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+    id: 86
+  }
+}
+components {
+  name: "a2dp.Vol.NotificationCatcher$1"
+  kind: DYNAMIC_RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.STOPPED_RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.CLEAR"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.Vol.main.RELOAD_LIST"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.adapter.action.STATE_CHANGED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.preferences.UPDATED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.HEADSET_PLUG"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  registration_instruction {
+    statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r41, r99)"
+    class_name: "a2dp.Vol.main"
+    method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+    id: 86
+  }
+}
+components {
+  name: "android.appwidget.AppWidgetProvider"
+  kind: DYNAMIC_RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.CLEAR"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.Vol.main.RELOAD_LIST"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.adapter.action.STATE_CHANGED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.HEADSET_PLUG"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.STOPPED_RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.preferences.UPDATED"
+    }
+  }
+  registration_instruction {
+    statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r41, r99)"
+    class_name: "a2dp.Vol.main"
+    method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+    id: 86
+  }
+}
+components {
+  name: "a2dp.Vol.Widget"
+  kind: DYNAMIC_RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.CLEAR"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.STOPPED_RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.Vol.main.RELOAD_LIST"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.HEADSET_PLUG"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.preferences.UPDATED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.adapter.action.STATE_CHANGED"
+    }
+  }
+  registration_instruction {
+    statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r41, r99)"
+    class_name: "a2dp.Vol.main"
+    method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+    id: 86
+  }
+}
+components {
+  name: "a2dp.Vol.Starter"
+  kind: DYNAMIC_RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.STOPPED_RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.adapter.action.STATE_CHANGED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.CLEAR"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.Vol.main.RELOAD_LIST"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.preferences.UPDATED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.HEADSET_PLUG"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  registration_instruction {
+    statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r41, r99)"
+    class_name: "a2dp.Vol.main"
+    method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+    id: 86
+  }
+}
+components {
+  name: "a2dp.Vol.main$13"
+  kind: DYNAMIC_RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.STOPPED_RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.CLEAR"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.Vol.main.RELOAD_LIST"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.HEADSET_PLUG"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.adapter.action.STATE_CHANGED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.preferences.UPDATED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  registration_instruction {
+    statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r41, r99)"
+    class_name: "a2dp.Vol.main"
+    method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+    id: 86
+  }
+}
+components {
+  name: "a2dp.Vol.main$12"
+  kind: DYNAMIC_RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.Vol.main.RELOAD_LIST"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.CLEAR"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.adapter.action.STATE_CHANGED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.STOPPED_RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.HEADSET_PLUG"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.preferences.UPDATED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  registration_instruction {
+    statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r41, r99)"
+    class_name: "a2dp.Vol.main"
+    method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+    id: 86
+  }
+}
+components {
+  name: "a2dp.Vol.service$12"
+  kind: DYNAMIC_RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.Vol.main.RELOAD_LIST"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.STOPPED_RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.preferences.UPDATED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.CLEAR"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.HEADSET_PLUG"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.adapter.action.STATE_CHANGED"
+    }
+  }
+  registration_instruction {
+    statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r41, r99)"
+    class_name: "a2dp.Vol.main"
+    method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+    id: 86
+  }
+}
+components {
+  name: "a2dp.Vol.service$8"
+  kind: DYNAMIC_RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.STOPPED_RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.HEADSET_PLUG"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.CLEAR"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.adapter.action.STATE_CHANGED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.preferences.UPDATED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.Vol.main.RELOAD_LIST"
+    }
+  }
+  registration_instruction {
+    statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r41, r99)"
+    class_name: "a2dp.Vol.main"
+    method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+    id: 86
+  }
+}
+components {
+  name: "a2dp.Vol.service$16"
+  kind: DYNAMIC_RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.STOPPED_RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.Vol.main.RELOAD_LIST"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.CLEAR"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.HEADSET_PLUG"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.adapter.action.STATE_CHANGED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.preferences.UPDATED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  registration_instruction {
+    statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r41, r99)"
+    class_name: "a2dp.Vol.main"
+    method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+    id: 86
+  }
+}
+components {
+  name: "a2dp.Vol.service$3"
+  kind: DYNAMIC_RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.HEADSET_PLUG"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.preferences.UPDATED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.Vol.main.RELOAD_LIST"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.adapter.action.STATE_CHANGED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.CLEAR"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.STOPPED_RUNNING"
+    }
+  }
+  registration_instruction {
+    statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r41, r99)"
+    class_name: "a2dp.Vol.main"
+    method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+    id: 86
+  }
+}
+components {
+  name: "a2dp.Vol.service$4"
+  kind: DYNAMIC_RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.HEADSET_PLUG"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.preferences.UPDATED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.Vol.main.RELOAD_LIST"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.adapter.action.STATE_CHANGED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.STOPPED_RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.CLEAR"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  registration_instruction {
+    statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r41, r99)"
+    class_name: "a2dp.Vol.main"
+    method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+    id: 86
+  }
+}
+components {
+  name: "a2dp.Vol.service$5"
+  kind: DYNAMIC_RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.CLEAR"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.Vol.main.RELOAD_LIST"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.preferences.UPDATED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.STOPPED_RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.HEADSET_PLUG"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.adapter.action.STATE_CHANGED"
+    }
+  }
+  registration_instruction {
+    statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r41, r99)"
+    class_name: "a2dp.Vol.main"
+    method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+    id: 86
+  }
+}
+components {
+  name: "a2dp.Vol.main$11"
+  kind: DYNAMIC_RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.preferences.UPDATED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.adapter.action.STATE_CHANGED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.HEADSET_PLUG"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.Vol.main.RELOAD_LIST"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.CLEAR"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.STOPPED_RUNNING"
+    }
+  }
+  registration_instruction {
+    statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r41, r99)"
+    class_name: "a2dp.Vol.main"
+    method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+    id: 86
+  }
+}
+components {
+  name: "a2dp.Vol.service$1"
+  kind: DYNAMIC_RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.Vol.main.RELOAD_LIST"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.CLEAR"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.HEADSET_PLUG"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.adapter.action.STATE_CHANGED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.preferences.UPDATED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.STOPPED_RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  registration_instruction {
+    statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r41, r99)"
+    class_name: "a2dp.Vol.main"
+    method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+    id: 86
+  }
+}
+components {
+  name: "a2dp.Vol.service$2"
+  kind: DYNAMIC_RECEIVER
+  exported: true
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.preferences.UPDATED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.STOPPED_RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.HEADSET_PLUG"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.RUNNING"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.adapter.action.STATE_CHANGED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_CONNECTED"
+      value: "NULL-CONSTANT"
+      value: "android.bluetooth.device.action.ACL_CONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.vol.service.CLEAR"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      value: "android.bluetooth.device.action.ACL_DISCONNECTED"
+    }
+  }
+  intent_filters {
+    attributes {
+      kind: ACTION
+      value: "a2dp.Vol.main.RELOAD_LIST"
+    }
+  }
+  registration_instruction {
+    statement: "virtualinvoke r0.<a2dp.Vol.main: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>($r41, r99)"
+    class_name: "a2dp.Vol.main"
+    method: "<a2dp.Vol.main: void onCreate(android.os.Bundle)>"
+    id: 86
+  }
+}
+analysis_start: 1601720434
+analysis_end: 1601720452

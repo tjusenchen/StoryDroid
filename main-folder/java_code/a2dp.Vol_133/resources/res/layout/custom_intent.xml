@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="22dp" android:textColor="#fff" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Action:" android:width="100dp"/>
+        <EditText android:id="@+id/ci_et_action" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="1"/>
+    </LinearLayout>
+    <View android:background="@android:drawable/divider_horizontal_dark" android:layout_width="match_parent" android:layout_height="1dp"/>
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="22dp" android:textColor="#fff" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Data:" android:width="100dp"/>
+        <EditText android:id="@+id/ci_et_data" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="1"/>
+    </LinearLayout>
+    <View android:background="@android:drawable/divider_horizontal_dark" android:layout_width="match_parent" android:layout_height="1dp"/>
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="22dp" android:textColor="#fff" android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Type:" android:width="100dp"/>
+        <EditText android:id="@+id/ci_et_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="1"/>
+    </LinearLayout>
+    <View android:background="@android:drawable/divider_horizontal_dark" android:layout_width="match_parent" android:layout_height="1dp"/>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="#ccc" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Button android:id="@+id/ci_btn_ok" android:layout_width="100dp" android:layout_height="wrap_content" android:layout_margin="5dp" android:text="@string/OK"/>
+        <Button android:id="@+id/ci_btn_test" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp" android:text="Test"/>
+        <Button android:id="@+id/ci_btn_cancel" android:layout_width="100dp" android:layout_height="wrap_content" android:layout_margin="5dp" android:text="Cancel"/>
+    </LinearLayout>
+</LinearLayout>

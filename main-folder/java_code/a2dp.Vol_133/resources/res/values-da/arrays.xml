@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="PrefsNotifyItems">
+        <item>always</item>
+        <item>connected_only</item>
+        <item>never</item>
+    </array>
+    <array name="PrefsNotifyOptions">
+        <item>Denne service vil starte som en foregrunds program med et ikon i notifikations baren.</item>
+        <item>-</item>
+        <item>Denne service vil starte som en baggrunds program uden ikon i notifikations baren.</item>
+    </array>
+    <array name="gpsDistance">
+        <item>2m (6ft)</item>
+        <item>5m (15ft)</item>
+        <item>10m (30ft)</item>
+        <item>15m (45ft)</item>
+        <item>20m (60ft)</item>
+        <item>30m (90ft)</item>
+    </array>
+    <array name="gpsDistance_items">
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>30</item>
+    </array>
+    <array name="gpsTimeout">
+        <item>Deaktivér GPS aflytter</item>
+        <item>5 sekunder</item>
+        <item>10 sekunder</item>
+        <item>15 sekunder</item>
+        <item>20 sekunder</item>
+        <item>30 sekunder</item>
+        <item>45 sekunder</item>
+    </array>
+    <array name="gpsTimeout_items">
+        <item>@null</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>15000</item>
+        <item>20000</item>
+        <item>30000</item>
+        <item>45000</item>
+    </array>
+</resources>

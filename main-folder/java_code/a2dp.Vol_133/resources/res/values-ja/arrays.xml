@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="PrefsNotifyItems">
+        <item>always</item>
+        <item>connected_only</item>
+        <item>never</item>
+    </array>
+    <array name="PrefsNotifyOptions">
+        <item>フォアグラウンドタスクとしてサービス開始、通知領域のアイコン表示</item>
+        <item>デバイス接続時にのみアイコン表示</item>
+        <item>バックグラウンドタスクとしてサービス開始、通知領域のアイコン非表示</item>
+    </array>
+    <array name="gpsDistance">
+        <item>2m</item>
+        <item>5m</item>
+        <item>10m</item>
+        <item>15m</item>
+        <item>20m</item>
+        <item>30m</item>
+    </array>
+    <array name="gpsDistance_items">
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>30</item>
+    </array>
+    <array name="gpsTimeout">
+        <item>GPSリスナー無効</item>
+        <item>5秒</item>
+        <item>10秒</item>
+        <item>15秒</item>
+        <item>20秒</item>
+        <item>30秒</item>
+        <item>45秒</item>
+    </array>
+    <array name="gpsTimeout_items">
+        <item>@null</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>15000</item>
+        <item>20000</item>
+        <item>30000</item>
+        <item>45000</item>
+    </array>
+</resources>

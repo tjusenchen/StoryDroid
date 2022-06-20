@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>StoryDroid</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <link href="prism/prism.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./highlight/styles/default.css">
+      <script src="highlight/highlight.pack.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+        <!-- <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script> -->
+        <script type="text/javascript" src="d3.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body style="background-color: #ece9e9">
+ 
+<header>
+        <div class="cbp-af-header">
+          <div class=" cbp-af-inner">
+            <div class="container">
+              <div class="row">
+
+                <div class="span4">
+                  <!-- logo -->
+                  <div class="logo">
+                    <h1 ><a  style="color: #ffffff; margin-left: 100px", href="index.html">StoryDroid</a></h1>
+                    <!-- <img src="assets/img/logo.png" alt="" /> -->
+                  </div>
+                  <!-- end logo -->
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+        <div style="position:relative;left:200px;top:70px;height:100px;width: 1400px;">
+            <div style="float:left; display:inline; margin-top: 100px">
+                <div >
+                    <h1 id="one_h2">Method call graph</h1>        
+                </div>
+            </div>
+            <div style=" float:right; display:inline; margin-top: 20px">
+                <div >
+                    <div class="date", id='nowDIV' style="position:relative;bottom:20px">Updated June 19, 2019</div>
+                    <h2 id="remind1">Package Name: </h2>
+                    <h2 id="remind2">Package Version: </h2>
+                    <h2 id="remind3">Act Number: </h2>
+                    <h2 id="remind4">Act Name: </h2>
+                </div>
+            </div>
+
+
+        
+
+        </div>
+        <div style="position:relative;top:140px">
+                <section id="vis_method" style="margin-left:auto;margin-right:auto;width:1200px;height:700px;border:1px solid #373535"></section>
+        </div>
+        <a name="sourceactcode"></a>
+        <div id="1"  style="position:relative;left:200px;top:200px">
+
+            <h1 id="one_h2">Activity Source Code</h1>
+        </div>
+        <div style="position:relative;top:220px">
+            <pre><code id="one_pre" class="Java" style="margin-left:auto;margin-right:auto;width:80%"></code></pre>
+        </div>
+
+        <div id="2" style="position:relative;left:200px;top:350px">
+            <a name="sourcelayoutcode"></a>
+            <h1 id="two_h2">Activity Layout Code</h1>
+        </div>
+        <div style="position:relative;top:400px">
+            <pre><code id="two_pre" class="xml" style="margin-left:auto;margin-right:auto;width:80%"></code></pre>
+        </div>
+
+<footer class="footer", style="top:500px">
+    <div style="margin-left: 45%; position:relative", class="container">
+      <div class="row">
+        <div class="span3">
+          <div class="widget">
+            <!-- logo -->
+            <div class="footerlogo">
+              <h6><a href="index.html">StoryDroid</a></h6>
+              <!-- <img src="assets/img/logo.png" alt="" /> -->
+            </div>
+            <!-- end logo -->
+            <p>
+              &copy; StoryDroid - All right reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+        
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="app_info.js"></script>
+<script>
+  function show(){ 
+        var date = new Date(); //日期对象 
+        var now = ""; 
+        now = date.getFullYear()+"-"; //读英文就行了 
+        now = now + (date.getMonth()+1)+"-"; //取月的时候取的是当前月-1如果想取当前月+1就可以了 
+        now = now + date.getDate()+" "; 
+        now = now + date.getHours()+":"; 
+        now = now + date.getMinutes()+":"; 
+        now = now + date.getSeconds(); 
+        document.getElementById("nowDIV").innerHTML = now; //div的html是now这个字符串 
+        console.log(now)
+        setTimeout("show()",1000); //设置过1000毫秒就是1秒，调用show方法 
+        }
+    show() 
+      function getParams(key) {
+            var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                return unescape(r[2]);
+            }
+            return null;
+        };
+  var libraryname = getParams("name");
+        //document.getElementById("appname").innerText = d.name
+    document.getElementById("remind1").innerText = "Package Name: " + app_info.package_name
+    document.getElementById("remind2").innerText = "Package Version: " + app_info.app_version
+    document.getElementById("remind3").innerText = "Activity Number: " + app_info.act_number
+    document.getElementById("remind4").innerText = "Activity Name: " + libraryname
+
+
+  console.log(libraryname)
+
+
+  var wholeCode = document.getElementById("one_pre");
+  var methodCode = document.getElementById("two_pre");
+
+
+var nodes = {};
+links.forEach(function (link) {
+    link.source = nodes[link.source] || (nodes[link.source] = {
+        name: link.source,
+        actcode: link.source_actcode,
+        layoutcode: link.source_layoutcode,
+        img: link.sourceimg,
+        methodLinks: link.methodSourceLink,
+        //act_fullname: link.source_fullname
+    });
+    link.target = nodes[link.target] || (nodes[link.target] = {
+        name: link.target,
+        actcode: link.target_actcode,
+        layoutcode: link.target_layoutcode,
+        img: link.targetimg,
+        methodLinks: link.methodTargetLink,
+        //act_fullname: link.target_fullname
+    });
+});
+var node;
+console.log(nodes)
+for (n in nodes){
+  if (nodes[n].name == libraryname)
+    node = nodes[n];
+    console.log(node, libraryname)
+}
+
+console.log(node)
+wholeCode.innerHTML = node.actcode;
+methodCode.innerText = node.layoutcode;
+document.getElementById("vis_method").innerHTML = "";
+var method_nodes = {};
+var method_links = Array.from(node.methodLinks);
+var dummy_links = []
+
+//deep copy
+for (let i = 0; i < method_links.length; i++) {
+    let link = method_links[i];
+    dummy_links.push({
+        source: method_nodes[link.source] || (method_nodes[link.source] = {
+            name: link.source
+            //name: link.source_fullname
+        }),
+        target: method_nodes[link.target] || (method_nodes[link.target] = {
+            name: link.target
+            //name: link.target_fullname
+        })
+    });
+}
+
+var width = 1200,
+    height = 700;
+var methodForce = d3.layout.force()
+    .nodes(d3.values(method_nodes))
+    .links(dummy_links)
+    .size([width, height])
+    .linkDistance(100)
+    .charge(-500)
+    .on("tick", tick)
+    .start();
+
+var svg = d3.select("#vis_method").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+svg.append("defs").selectAll("marker")
+    .data(["suit", "licensing", "resolved"])
+    .enter().append("marker")
+    .attr("id", function (d) {
+        return d;
+    })
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 15)
+    .attr("refY", -1.5)
+    .attr("markerWidth", 6)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+    .append("path")
+    .attr("d", "M0,-5L10,0L0,5");
+
+var path = svg.append("g").selectAll("path")
+    .data(methodForce.links())
+    .enter().append("path")
+    .attr("class", "link")
+    .attr("marker-end", "url(#suit)");
+
+var circle = svg.append("g").selectAll("circle")
+    .data(methodForce.nodes())
+    .enter().append("circle")
+    .attr("r", 6)
+    .call(methodForce.drag);
+
+var text = svg.append("g").selectAll("text")
+    .data(methodForce.nodes())
+    .enter().append("text")
+    .attr("x", 8)
+    .attr("y", ".31em")
+    .text(function (d) {
+        return d.name;
+    });
+
+function tick() {
+    path.attr("d", linkArc);
+    circle.attr("transform", transform);
+    text.attr("transform", transform);
+}
+
+function linkArc(d) {
+    var dx = d.target.x - d.source.x,
+        dy = d.target.y - d.source.y,
+        dr = Math.sqrt(dx * dx + dy * dy);
+    //return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
+    return "M" + (d.source.x) + "," + (d.source.y) + "L" + (d.target.x) + "," + (d.target.y);
+}
+
+function transform(d) {
+    d.x = Math.min(1200, Math.max(0, d.x))
+    d.y = Math.min(700, Math.max(0, d.y))
+    return "translate(" + d.x + "," + d.y + ")";
+}
+
+</script>
+
+
+</body>
+
+</html>

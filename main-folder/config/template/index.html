@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>StoryDroid</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="./highlight/styles/default.css">
+    <link href="prism/prism.css" rel="stylesheet" />
+    <script src="highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script> -->
+    <script type="text/javascript" src="d3.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="headerfix.ccs" rel="stylesheet">
+</head>
+<script type="text/javascript" src="app_info.js"></script>
+<!-- <body style="display: block"> -->
+<body>
+    <header>
+        <div class="cbp-af-header">
+          <div class=" cbp-af-inner">
+            <div class="container">
+              <div class="row">
+
+                <div class="span4">
+                  <!-- logo -->
+                  <div class="logo">
+                    <h1 ><a  style="color: #ffffff; margin-left: 100px", href="index.html">StoryDroid</a></h1>
+                    <!-- <img src="assets/img/logo.png" alt="" /> -->
+                  </div>
+                  <!-- end logo -->
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+<div id="container", style="font-family: monospace">
+        <div style="width:70%;background-color: #ece9e9;margin-right: 20px">
+            <div style="position:relative;left:200px;top:20px;height: 50px;">
+            
+              <div style="float:left; display:inline; margin-top: 20px">
+                    <div style="position:relative;bottom:20px"></div>
+                    <h1 id="one_h2", style="">Activity Transition Graph With UI Pages</h1>
+              </div>   
+               
+            </div>    
+
+
+            <div style="position:relative;left:100px;width:1100px;height:760px;border:1px;margin-top: 50px;">
+                <section id="vis"></section>
+            </div>
+        </div>
+        <div style="width:30%;background-color: #ece9e9;">
+
+            <div style=" float:left; display:inline; margin-left: 50px;">
+                <div class="date", id='nowDIV' style="position:relative;bottom:20px">Updated June 19, 2019</div>
+                    <h2 id="remind1">Package Name: </h2>
+                    <h2 id="remind2">Package Version: </h2>
+                    <h2 id="remind3">Activity Number: </h2>
+                </div>
+
+            <div id="rightpanel", style="position:relative;width:500px;height:760px;top:20px;border:1px;visibility:hidden">
+                <!-- Row Highlight Javascript -->
+                <div style="width:100%">
+                    <img id='img' src='download.jpeg' style="margin-top:10px;margin-bottom:10px;margin-left:15%;margin-right:15%;width:60%"></img>
+                
+                </div>
+                <style type="text/css">
+                table.tftable {font-size:14px;color:#333333;width:80%;border-width: 1px;margin-left:5%;margin-right:5%;border-color: #729ea5;border-collapse: collapse;}
+                table.tftable th {font-size:14px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}
+                table.tftable tr {background-color:#ffffff;}
+                table.tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+                </style>
+        
+                <table id="tfhover" class="tftable">
+                <tr style="font-weight: 700;"><td id = 'appname'>Source Fullname</td></tr>
+                <tr><td><a id = 'h3' href="index2.html">Method Call Graph</a></td></tr>
+                <tr><td><a id = 'h1' href="index2.html">Activity Code</a></td></tr>
+                <tr><td><a id = 'h2' href="index2.html">Layout Code</a></td></tr>
+                
+                </table>
+            </div>
+        </div>
+            
+        </div>
+
+ 
+<!-- <div id="wrap">
+        <div style="width:20%;">
+                <h1 id="one_h2">Method Hierarchy</h1>
+                <section id="vis_method"></section>
+            </div>
+        <div id="left">
+            <h1 id="one_h2">Click UI pages to view activity code</h1>
+            <pre><code id="one_pre" class="language-java"></code></pre>
+        </div>
+        <br/>
+        <div id="right">
+            <h1 id="two_h2">Click UI pages to view layout code</h1>
+            <pre><code id="two_pre" class="language-xml"></code></pre>
+        </div>
+</div> -->
+
+
+        
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="diagram.js"></script>
+<script src="prism/prism.js"></script>
+<script> 
+    document.getElementById("remind1").innerText = "Package Name: " + app_info.package_name
+    document.getElementById("remind2").innerText = "Package Version: " + app_info.app_version
+    document.getElementById("remind3").innerText = "Activity Number: " + app_info.act_number
+    function show(){ 
+        var date = new Date(); //日期对象 
+        var now = ""; 
+        now = date.getFullYear()+"-"; //读英文就行了 
+        now = now + (date.getMonth()+1)+"-"; //取月的时候取的是当前月-1如果想取当前月+1就可以了 
+        now = now + date.getDate()+" "; 
+        now = now + date.getHours()+":"; 
+        now = now + date.getMinutes()+":"; 
+        now = now + date.getSeconds(); 
+        document.getElementById("nowDIV").innerHTML = now; //div的html是now这个字符串 
+        console.log(now)
+        setTimeout("show()",1000); //设置过1000毫秒就是1秒，调用show方法 
+        }
+    show() 
+</script>
+<script>
+window.onload=function(){
+    var tfrow = document.getElementById('tfhover').rows.length;
+    var tbRow=[];
+    for (var i=1;i<tfrow;i++) {
+    tbRow[i]=document.getElementById('tfhover').rows[i];
+    tbRow[i].onmouseover = function(){
+    this.style.backgroundColor = '#f3f8aa';
+    };
+    tbRow[i].onmouseout = function() {
+    this.style.backgroundColor = '#ffffff';
+    };
+    }
+   };</script>
+
+<footer class="footer">
+    <div style="margin-left: 45%;", class="container">
+      <div class="row">
+        <div class="span3">
+          <div class="widget">
+            <!-- logo -->
+            <div class="footerlogo">
+              <h6><a href="index.html">StoryDroid</a></h6>
+              <!-- <img src="assets/img/logo.png" alt="" /> -->
+            </div>
+            <!-- end logo -->
+            <p>
+              &copy; StoryDroid - All right reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
