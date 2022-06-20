@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>StoryDroid+</title>
+
+  <!-- slider stylesheet -->
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.css')}}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{url_for('static', filename='css/responsive.css')}}" rel="stylesheet" />
+    <script type="text/javascript" src="{{url_for('static', filename='js/vis.min.js')}}"></script>
+    <link href="{{url_for('static', filename='css/vis.min.css')}}" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a class="navbar-brand" href="{{url_for('index')}}">
+            <span>
+              StoryDroid+
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('about')}}"> About </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('do')}}"> Recent Scans </a>
+                </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('doAct')}}"> Activity</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('contact')}}">Contact us</a>
+                </li>
+              </ul>
+              <div class="user_option">
+                <a href="">
+                  <img src="{{url_for('static', filename='images/user.png')}}" alt="">
+                </a>
+                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+
+
+  <div id="container" style="font-family: monospace; display: flex;">
+        <div style="width:70%;background-color: #ece9e9;margin-right: 20px">
+            <div style="position:relative;left:200px;top:20px;height: 50px;">
+
+              <div style="float:left; display:inline; margin-top: 20px">
+                    <div style="position:relative;bottom:20px"></div>
+                    <h1 id="one_h2" style="font-size: 24px; margin-left: 0px;font-weight: 700;">Similar UI Pages</h1>
+              </div>
+
+            </div>
+
+
+            <div style="position:relative;left:100px;width:1100px;height:760px;border:1px;margin-top: 50px;">
+                <section id="vis"></section>
+            </div>
+        </div>
+        <div style="width:30%;background-color: #ece9e9;">
+
+                <div class="date" id='nowDIV' style="position:relative;bottom:20px">Updated June 19, 2019</div>
+
+                    <form class="logo-form" style="margin-left: 40px;">
+                         <input id="utgSearchBar" onkeyup="searchUTG()" type="text" class="form-control" placeholder="Search (App Name or Act Name)">
+                    </form>
+
+
+            <div id="rightpanel" style="position:relative;width:500px;height:760px;top:10px;border:1px;visibility:hidden">
+                <!-- Row Highlight Javascript -->
+                <div style="width:100%">
+                    <img id='img' src="{{url_for('static', filename='images/user.png')}}" style="margin-top:10px;margin-bottom:10px;margin-left:10%;margin-right:15%;width:60%"></img>
+
+                </div>
+                <style type="text/css">
+                table.tftable {font-size:14px;color:#333333;width:80%;border-width: 1px;margin-left:5%;margin-right:5%;border-color: #729ea5;border-collapse: collapse;}
+                table.tftable th {font-size:14px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}
+                table.tftable tr {background-color:#ffffff;}
+                table.tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+                </style>
+
+                <table id="tfhover" class="tftable">
+                <tr style="font-weight: 700;"><td id = 'appname'>Source Fullname</td></tr>
+                <tr style="font-weight: 700;"><td id = 'app'>App Fullname</td></tr>
+<!--                <tr><td><a id = 'h3' href="index2.html">Method Call Graph</a></td></tr>-->
+                <tr><td><a id = 'h1' href="index2.html">Activity Code</a></td></tr>
+                <tr><td><a id = 'h2' href="index2.html">Layout Code</a></td></tr>
+
+                </table>
+            </div>
+        </div>
+    <style>
+       h2 {
+         font-size: 16px;
+         margin-left: 0px;
+         font-weight: 700;
+     }
+     #vis {
+        //width: 600px;
+        //height: 400px;
+        //border: 1px solid lightgray;
+        position:relative;
+        //left:100px;
+        left:0px;
+        //width:1100px;
+        width:900px;
+        //height:760px;
+        height:560px;
+        border:1px;
+        margin-top: 50px;
+      }
+      #utgSearchBar {
+        width: 400px;
+        height: 30px;
+        //margin-left: 100px;
+        //margin-top: 30px;
+      }
+      pre {
+         font-size: 12px;
+         margin-left: 0px;
+         font-weight: normal;
+     }
+     @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600);
+     body {
+         font-family: "Source Code Pro", Consolas, monaco, monospace;
+         line-height: 160%;
+         font-size: 16px;
+         margin: 0;
+     }
+     .hljs, .hljs-subst {
+          color: #444;
+        }
+        .hljs {
+          display: block;
+          overflow-x: auto;
+          padding: 0.5em;
+          background: #FFFFFF;
+        }
+    </style>
+
+      </div>
+
+<!--      <div style="background-color: #ece9e9;">-->
+
+
+<!--      <a name="sourceactcode"></a>-->
+<!--        <div id="1"  style="position:relative;left:200px;">-->
+
+<!--            <h1 id="one_h1" style="font-size: 24px;font-weight: 700;"></h1>-->
+<!--        </div>-->
+<!--        <div style="position:relative;">-->
+<!--            <pre><code id="one_pre" class="Java hljs" style="margin-left:auto;margin-right:auto;width:80%"></code></pre>-->
+<!--        </div>-->
+
+<!--        <div id="2" style="position:relative;left:200px;">-->
+<!--            <a name="sourcelayoutcode"></a>-->
+<!--            <h1 id="two_h2" style="font-size: 24px;font-weight: 700;"></h1>-->
+<!--        </div>-->
+<!--        <div style="position:relative;">-->
+<!--            <pre><code id="two_pre" class="xml hljs" style="margin-left:auto;margin-right:auto;width:80%"></code></pre>-->
+<!--        </div>-->
+
+<!--          </div>-->
+  </div>
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; StoryDroid - All Rights Reserved
+    </p>
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="{{url_for('static', filename='js/data.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/app_info.js')}}"></script>
+<!--<script type="text/javascript" src="{{url_for('static', filename='js/diagram2.js')}}"></script>-->
+<script src="{{url_for('static', filename='js/prism.js')}}"></script>
+
+<script type="text/javascript" src="{{url_for('static', filename='js/mainUtg.js')}}"></script>
+<script>
+    //document.getElementById("remind1").innerText = "APK Name: " + app_info.package_name
+    //document.getElementById("remind2").innerText = "Package Version: " + app_info.app_version
+    //document.getElementById("remind3").innerText = "Activity Number: " + app_info.act_number
+    function show(){
+        var date = new Date(); //日期对象
+        var now = "";
+        now = date.getFullYear()+"-"; //读英文就行了
+        now = now + (date.getMonth()+1)+"-"; //取月的时候取的是当前月-1如果想取当前月+1就可以了
+        now = now + date.getDate()+" ";
+        now = now + date.getHours()+":";
+        now = now + date.getMinutes()+":";
+        now = now + date.getSeconds();
+        document.getElementById("nowDIV").innerHTML = now; //div的html是now这个字符串
+        //console.log(now)
+        setTimeout("show()",1000); //设置过1000毫秒就是1秒，调用show方法
+        }
+    show()
+</script>
+<script>
+    window.onload=function(){
+        var tfrow = document.getElementById('tfhover').rows.length;
+        var tbRow=[];
+        for (var i=1;i<tfrow;i++) {
+        tbRow[i]=document.getElementById('tfhover').rows[i];
+        tbRow[i].onmouseover = function(){
+        this.style.backgroundColor = '#f3f8aa';
+        };
+        tbRow[i].onmouseout = function() {
+        this.style.backgroundColor = '#ffffff';
+        };
+        }
+       };
+
+      var container = document.getElementById('vis');
+
+      var options = {
+        autoResize: true,
+        height: '100%',
+        width: '100%',
+        locale: 'en',
+
+        nodes: {
+          //shape: "dot",
+          shapeProperties: {
+            useBorderWithImage: true
+          },
+
+          borderWidth: 0,
+          borderWidthSelected: 5,
+
+          color: {
+            border: '#FFFFFF',
+            background: '#FFFFFF',
+
+            highlight: {
+              border: '#0000FF',
+              background: '#0000FF',
+            }
+          },
+          mass: 12,
+          fixed: false,
+          //physics: false,
+          font: {
+            size: 10,
+            color:'#000'
+          }
+        },
+        edges: {
+          color: 'black',
+          font:{
+            size: 12,
+            color:'#000'
+          }
+        },
+        physics:{
+          enabled: false,
+          hierarchicalRepulsion: {
+            nodeDistance: 220
+          }
+        }
+      };
+
+      // 初始化网络
+      var network = new vis.Network(container, utg, options);
+      network.on("click", function (params) {
+        if (params.nodes.length > 0) {
+            node = params.nodes[0];
+            var selectedNode = getNode(node);
+            document.getElementById("img").src = selectedNode.image;
+            document.getElementById("appname").innerText = "Activity Name: " + selectedNode.id
+            document.getElementById("app").innerText = "App Name: " + selectedNode.app
+            document.getElementById("h1").href = "graphAct1" + "?name=" + selectedNode.id + "#sourceactcode"
+            document.getElementById("h2").href = "graphAct1" + "?name=" + selectedNode.id + "#sourcelayoutcode"
+            //document.getElementById("h3").href = "graphAct1" + "?name=" + selectedNode.label
+            document.getElementById("rightpanel").style.visibility = 'visible'
+
+            //document.getElementById("one_h1").innerText = "Activity Source Code";
+           // document.getElementById("two_h2").innerHTML = "Activity Layout Code"
+           // var wholeCode = document.getElementById("one_pre");
+           // var methodCode = document.getElementById("two_pre");
+           // wholeCode.innerHTML = selectedNode.layoutcode
+           // methodCode.innerText = selectedNode.actcode
+        }
+       });
+      function getNode(nodeId) {
+          var i, numNodes;
+          numNodes = utg.nodes.length;
+          for (i = 0; i < numNodes; i++) {
+            if (utg.nodes[i].id == nodeId) {
+              return utg.nodes[i];
+            }
+          }
+          console.log("cannot find node: " + nodeId);
+        }
+      function searchUTG() {
+          var searchKeyword = document.getElementById("utgSearchBar").value.toUpperCase();
+          if (searchKeyword == null || searchKeyword == "") {
+            network.unselectAll()
+          } else {
+            var i, numNodes;
+            nodes = utg.nodes;
+            numNodes = nodes.length;
+            selectedNodes = []
+            for (i = 0; i < numNodes; i++) {
+              if (nodes[i].id.toUpperCase().indexOf(searchKeyword) > -1) {
+                selectedNodes.push(nodes[i].id)
+              }
+              if (nodes[i].app.toUpperCase().indexOf(searchKeyword) > -1) {
+                selectedNodes.push(nodes[i].id)
+              }
+            }
+            network.unselectAll()
+            // console.log("Selecting: " + selectedNodes)
+            network.selectNodes(selectedNodes, false)
+          }
+        }
+</script>
+  <!-- end owl carousel script -->
+
+</body>
+
+</html>

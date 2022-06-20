@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>File Upload</title>
+      <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>File Upload</h1>
+    <form method="POST" action="" enctype="multipart/form-data">
+      <p><input type="file" name="file" style="display: none"></p>
+      <p><input type="submit" value="Submit"></p>
+    </form>
+
+    <form action="" method="POST" enctype="multipart/form-data">
+     <div class="textfile-box" style="display:inline-block;margin-right:5px;position:relative;">
+        <input type='text' style="140px;" readonly name='textfield' id='textfield' class='txt' />
+        <input type='button' class='btn btn-primary' value='浏览..' />
+        <input type="file" style="position:absolute;70px;top:0;right:0;opacity:0;alpha(opacity=0);" name="file" required accept="" onchange="document.getElementById('textfield').value=this.value"  />
+      </div>
+      <input type="submit" name="submit" id="submitBtn" class="btn btn-warning" value="Submit" />
+    </form>
+
+    <h1>File Upload</h1>
+    <form action="{{ url_for('upload_files') }}" class="dropzone">
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,36 @@
+import os
+import platform
+
+
+def mkdir(*args):
+    for folder in args:
+        if not os.path.exists(folder):
+            os.makedirs(folder)
+
+
+def make_join(*args):
+    folder = os.path.join(*args)
+    mkdir(folder)
+    return folder
+
+
+def list_dir(folder, condition=None, key=None, reverse=False):
+    if condition is not None:
+        files = [(file, os.path.join(folder, file)) for file in filter(condition, os.listdir(folder))]
+    else:
+        files = [(file, os.path.join(folder, file)) for file in os.listdir(folder)]
+    if key is not None:
+        files = sorted(files, key=key, reverse=reverse)
+    return files
+
+
+def flatten(l):
+    return [item for sublist in l for item in sublist]
+
+
+def is_win():
+    return platform.system() == "Windows"
+
+
+def get_postfix(post_fix):
+    return lambda x: x.endswith(post_fix)

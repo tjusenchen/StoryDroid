@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>StoryDroid+</title>
+
+  <!-- slider stylesheet -->
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.css')}}"/>
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{url_for('static', filename='css/responsive.css')}}" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a class="navbar-brand" href="{{url_for('index')}}">
+            <span>
+              StoryDroid+
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('about')}}"> About </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('do')}}"> Recent Scans </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('doAct')}}"> Activity</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('contact')}}">Contact us</a>
+                </li>
+              </ul>
+              <div class="user_option">
+                <a href="">
+                  <img src="{{url_for('static', filename='images/user.png')}}" alt="">
+                </a>
+                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+
+  <!-- who section -->
+
+  <section class="who_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="img-box">
+            <img src="{{url_for('static', filename='images/who-img.jpg')}}" alt="">
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                What we do?
+              </h2>
+            </div>
+            <p>
+              The development team usually endeavors painstaking efforts to review and analyze many existing apps with similar purposes such as competitive analysis, design recommendation, code generation, and app testing. To assist different roles to do these tasks, in our prior work, we proposed StoryDroid and StoryDistiller to automatically generate the storyboards for Android apps with various types of features such as UI pages, UI components, layout code, and logic code. However, the main goal of these tools for generating storyboards is all aimed at exploring and parsing more app pages and lack some consideration of the presentation and interpretability of the results. To improve the usability and scalability, based these tools for the static and dynamic exploration of apps, and based on more effectively extracting and generating storyboards of Android applications with rich features, this paper presents an offline web-based tool, named StoryDroid+. StoryDroid+ provides an operation-friendly platform for users to explore apps and helps different stakeholders explore and understand applications from different perspectives through rich visual pages.
+            </p>
+            <div>
+<!--              <a href="">-->
+<!--                Read More-->
+<!--              </a>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end who section -->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section" style="position:fixed;bottom:0;width:100%;">
+    <p>
+      &copy; StoryDroid+ - All Rights Reserved
+    </p>
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- owl carousel script 
+    -->
+  <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 0,
+      navText: [],
+      center: true,
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        1000: {
+          items: 3
+        }
+      }
+    });
+  </script>
+  <!-- end owl carousel script -->
+
+</body>
+
+</html>
