@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>StoryDroid</title>
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+		<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+		<META HTTP-EQUIV="Expires" CONTENT="0">
+	</head>
+	<link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+	<!-- <link rel="stylesheet" type="text/css" href="css/loader1.css"/> -->
+	<!-- <link rel="stylesheet" href="css/loader2.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/load.css')}}"/>
+	<body  class="hero_area1">
+		<!-- loader1 第一个加载动画 -->
+		<!-- <div class="loader">
+			<div class="circle"></div>
+			<div class="circle"></div>
+		</div> -->
+
+
+		<!-- loader2 第二个加载动画-->
+		<div class="loader">
+			loading
+		</div>
+		<!-- loader3 第三个加载动画-->
+<!--		<div class="loader">-->
+<!--			<span></span>-->
+<!--			<span></span>-->
+<!--			<span></span>-->
+<!--		</div>-->
+
+		<!-- 页面主页 -->
+		<section class="main1">
+			<h1>欢迎来到 我的世界</h1>
+			<p>
+				welcomewelcomewelcomewelcomewel
+				comewelcomewelcomewelcomew
+				elcomewelcomewelcomewelcomewelcom
+				ewelcomewelcomewelcomewelcomewelcomewelcomewelcomewelcomewelcomewelcomewelcomewelcome
+			</p>
+			<a href="#" class="btn1">阅读更多</a>
+		</section>
+		<script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+		<script type="text/javascript">
+			var loader = document.querySelector('.loader');
+			var main = document.querySelector('.main');
+			function getParams(key) {
+				var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if (r != null) {
+					return unescape(r[2]);
+				}
+				return null;
+			};
+			var libraryname = getParams("name");
+			console.log(libraryname);
+			$.post( "/postoutput2", {
+			  javascript_data: libraryname
+			});
+			var arr = [];
+			var r = libraryname.split('+');
+			apk1 = r[0]
+			apk2 = r[1]
+			alert("Output " + apk1 + "+" + apk2 + "!")
+			window.location="graph12" + "?name=" +  apk1 + "+" + apk2;
+		</script>
+	</body>
+</html>
+

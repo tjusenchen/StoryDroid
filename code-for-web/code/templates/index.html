@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>StoryDroid+</title>
+
+  <!-- slider stylesheet -->
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.css">
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.css')}}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{url_for('static', filename='css/responsive.css')}}" rel="stylesheet" />
+  <link href="{{url_for('static', filename='css/load.css')}}" rel="stylesheet" />
+</head>
+
+<body>
+  <script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- owl carousel script
+    -->
+  <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+      loop: true,
+      margin: 0,
+      navText: [],
+      center: true,
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        1000: {
+          items: 3
+        }
+      }
+    });
+    function jumpTo() {
+        if (document.getElementById('textfield').value!=""){
+          alert("Successfully uploaded!");
+        }
+    }
+    function alertConfirm(){
+        var res=confirm("analyse?");
+        if(res){
+           window.location.href = "";
+        }
+    }
+
+	function hello()
+   {
+       $.ajax(
+      {
+         type: "POST",
+         url: "/hello",
+         dataType: "html",
+         success: function(msg)
+         {
+             //alert( "Data Saved: " + msg );
+             console.log(msg);
+             $("#display").html(msg);//注意显示的id
+             window.location="{{url_for('loading')}}"
+         },
+         error: function (xhr, status, error) {
+            console.log(error);
+        }
+      });
+   }
+   function toLoadPage(){
+      window.location="{{url_for('loading')}}";
+   }
+
+  </script>
+  <!-- end owl carousel script -->
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a class="navbar-brand" href="{{url_for('index')}}">
+            <span>
+              StoryDroid+
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('about')}}"> About </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('do')}}"> Recent Scans </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('doAct')}}"> Activity</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('contact')}}">Contact us</a>
+                </li>
+              </ul>
+              <div class="user_option">
+                <a href="">
+                  <img src="{{url_for('static', filename='images/user.png')}}" alt="">
+                </a>
+                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+<!--            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>-->
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col">
+                  <div class="detail-box">
+                    <div>
+                      <h2>
+                        Welcome to
+
+                      </h2>
+                      <h1>
+                        StoryDroid+
+                      </h1>
+                      <p>
+                        Please upload the APK to be scanned and click the button to start analysis.
+                      </p>
+                      <form action="/" method="POST" enctype="multipart/form-data">
+                        <div class="textfile-box" style="display:inline-block;margin-right:5px;position:relative;">
+                          <input type='text' style="width: 500px;height: 50px;" readonly name='textfield' id='textfield' class='txt' />
+                          <input type='button' class='btn btn-primary' style="width: 125px;height: 50px;font-size: 25px;" value='upload..' />
+                          <input type="file" style="position:absolute;70px;top:0;right:0;opacity:0;alpha(opacity=0);" name="file" required accept="" onchange="document.getElementById('textfield').value=this.value"  />
+                        </div>
+                        <input type="submit" class='btn btn-primary' style="width: 125px;height: 50px;font-size: 25px;" value="Submit" onclick="jumpTo()">
+                      </form>
+                      <button id="display1" style="margin-top: 25px;border-radius:5px;font-size: 30px;" onclick="toLoadPage()">{{ temp1 }}</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col">
+                  <div class="detail-box">
+                    <div>
+                      <h2>
+                        welcome to
+
+                      </h2>
+                      <h1>
+                        StoryDroid+
+                      </h1>
+                      <p>
+                        Please upload the APK to be scanned and click the button to start analysis.
+                      </p>
+                      <form action="{{ url_for('upload_files') }}" class="dropzone" style="color: #000000;font-size: 35px;">
+                      </form>
+                      <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.js"></script>
+                      <button id="display2" style="margin-top: 50px;border-radius: 12px;padding: 10px 32px;text-align: center;text-decoration: none;display: inline-block;margin: 4px 2px;cursor: pointer;font-size: 25px;" onclick="toLoadPage()">Start to analyse!</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; StoryDroid+ - All Rights Reserved
+    </p>
+  </section>
+  <!-- footer section -->
+
+
+
+</body>
+
+</html>

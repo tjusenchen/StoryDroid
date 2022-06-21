@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>StoryDroid+</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/default.css')}}">
+        <link href="{{url_for('static', filename='css/prism.css')}}" rel="stylesheet" />
+        <script src="{{url_for('static', filename='js/highlight.pack.js')}}"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <!-- <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script> -->
+        <script type="text/javascript" src="{{url_for('static', filename='js/d3.js')}}"></script>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style1.css')}}">
+
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
+    </head>
+<body style="background-color: #ece9e9">
+
+<header>
+        <div class="cbp-af-header">
+          <div class=" cbp-af-inner">
+            <div class="container">
+              <div class="row">
+
+                <div class="span4">
+                  <!-- logo -->
+                  <div class="logo">
+                    <h1 ><a  style="color: #ffffff; margin-left: 100px; text-transform: none;", href="{{url_for('do')}}">StoryDroid+</a></h1>
+                    <!-- <img src="assets/img/logo.png" alt="" /> -->
+                  </div>
+                  <!-- end logo -->
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+        <a name="sourceactcode"></a>
+        <div id="1"  style="position:relative;left:200px;top:170px">
+
+            <h1 id="one_h2">Activity Source Code</h1>
+        </div>
+        <div style="position:relative;top:190px">
+            <pre><code id="one_pre" class="Java" style="margin-left:auto;margin-right:auto;width:80%"></code></pre>
+        </div>
+
+        <div id="2" style="position:relative;left:200px;top:320px">
+            <a name="sourcelayoutcode"></a>
+            <h1 id="two_h2">Activity Layout Code</h1>
+        </div>
+        <div style="position:relative;top:340px">
+            <pre><code id="two_pre" class="xml" style="margin-left:auto;margin-right:auto;width:80%"></code></pre>
+        </div>
+
+<footer class="footer", style="top:500px">
+    <div style="margin-left: 45%; position:relative", class="container">
+      <div class="row">
+        <div class="span3">
+          <div class="widget">
+            <!-- logo -->
+<!--            <div class="footerlogo">-->
+<!--              <h6><a href="{{url_for('output')}}">StoryDroid</a></h6>-->
+<!--              &lt;!&ndash; <img src="assets/img/logo.png" alt="" /> &ndash;&gt;-->
+<!--            </div>-->
+            <!-- end logo -->
+            <p>
+              &copy; StoryDroid+ - All right reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script type="text/javascript" src="{{url_for('static', filename='actJS/mainUtg.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/app_info.js')}}"></script>
+<script>
+      function getParams(key) {
+            var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                return unescape(r[2]);
+            }
+            return null;
+        };
+  var libraryname = getParams("name");
+        //document.getElementById("appname").innerText = d.name
+
+
+  console.log(libraryname)
+
+
+  var wholeCode = document.getElementById("one_pre");
+  var methodCode = document.getElementById("two_pre");
+
+
+var nodes = {};
+utg["nodes"].forEach(function (link) {
+    link.label = nodes[link.label] || (nodes[link.label] = {
+        name: link.id,
+        actcode: link.actcode,
+        layoutcode: link.layoutcode,
+        img: link.image,
+        //methodLinks: link.methodSourceLink,
+        //act_fullname: link.source_fullname
+    });
+});
+var node;
+console.log(nodes)
+for (n in nodes){
+  if (nodes[n].name == libraryname)
+    node = nodes[n];
+    console.log(node, libraryname)
+}
+
+console.log(node)
+wholeCode.innerHTML = node.actcode;
+methodCode.innerText = node.layoutcode;
+
+
+
+</script>
+
+
+</body>
+
+</html>
