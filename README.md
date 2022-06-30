@@ -17,7 +17,7 @@ We have made the source code and the corresponding dataset publicly available. W
 https://sites.google.com/view/storydistiller/
 
 ## Papers
-[1] StoryDroid: Automated Generation of Storyboard for Android Apps
+[1] StoryDroid: Automated Generation of Storyboard for Android Apps (Research Paper)
 ```
 @inproceedings{chen2019storydroid,
   title={Storydroid: Automated generation of storyboard for Android apps},
@@ -29,7 +29,7 @@ https://sites.google.com/view/storydistiller/
 }
 ```
 
-[2] Automatically Distilling Storyboard with Rich Features for Android Apps
+[2] Automatically Distilling Storyboard with Rich Features for Android Apps (Research Paper)
 ```
 @inproceedings{chen2019storydistiller,
   title={Automatically Distilling Storyboard with Rich Features for Android Apps},
@@ -40,9 +40,9 @@ https://sites.google.com/view/storydistiller/
 }
 ```
 
-[3] StoryDroid+: An Offline Tool for Generating Storyboard for Android Apps (Under Submission)
+[3] StoryDroid+: An Offline Tool for Generating Storyboard for Android Apps (Demo Paper)
 ```
-@inproceedings{zhang22storydroid,
+@inproceedings{zhang22storydroid+,
   title={StoryDroid+: An Offline Tool for Generating Storyboard for Android Apps},
   author={Zhang, Yuxin, Chen, Sen and Fan, Lingling and Chen, Chunyang and Liu, Yang},
   booktitle={2022 ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)},
