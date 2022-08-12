@@ -40,13 +40,13 @@ https://sites.google.com/view/storydistiller/
 }
 ```
 
-[3] StoryDroid+: An Offline Tool for Generating Storyboard for Android Apps (Demo Paper)
+[3] StoryDroid+: An Offline Tool for Generating Storyboard for Android Apps (Demo Paper, Under Submission)
 ```
 @inproceedings{zhang22storydroid+,
   title={StoryDroid+: An Offline Tool for Generating Storyboard for Android Apps},
   author={Zhang, Yuxin, Chen, Sen and Fan, Lingling and Chen, Chunyang and Liu, Yang},
   booktitle={2022 ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)},
-  pages={0--4},
+  pages={1--5},
   year={2022},
   organization={ACM}
 }
