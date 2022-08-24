@@ -9,6 +9,17 @@ We have made the source code and the corresponding dataset publicly available. W
 * Android environment: adb, aapt
 * Java environment (jdk): jdk1.8.0_45
 * pip install opencv-python==3.4.3.18
+* Open ~/.bashrc and configure the path of JDK and SDK (Replace by your own paths):
+```
+export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45
+export JAVA_BIN=/usr/lib/jvm/jdk1.8.0_45/bin
+export CLASSPATH=.:${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar
+export PATH=$PATH:${JAVA_HOME}/bin
+export PATH=$PATH:/home/dell/Android/Sdk/tools
+export PATH=$PATH:/home/dell/Android/Sdk/platform-tools
+export PATH=$PATH:/home/dell/Android/Sdk/emulator
+export JAVA_HOME JAVA_BIN CLASSPATH PATH 
+```
 
 ## Usage
 ```Python run_storydistiller.py [apk(s)_folder]```
