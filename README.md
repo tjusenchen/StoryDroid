@@ -9,6 +9,8 @@ We have made the source code and the corresponding dataset publicly available. W
 * Android environment: adb, aapt
 * Java environment (jdk): jdk1.8.0_45
 * pip install opencv-python==3.4.3.18
+* IC3: https://github.com/siis/ic3
+* jadx: https://github.com/skylot/jadx
 * Open ~/.bashrc and configure the path of JDK and SDK (Replace by your own paths):
 ```
 export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45
