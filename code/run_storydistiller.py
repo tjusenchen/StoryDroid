@@ -575,5 +575,6 @@ if __name__ == '__main__':
             create_json_withindent.execute(result_apkfolder)
             print '[12] Get Json: DONE'
 
-            os.remove(os.path.join(result_apkfolder, apk_name + '.apk'))
+            if os.path.exists(os.path.join(result_apkfolder, apk_name + '.apk')):
+                os.remove(os.path.join(result_apkfolder, apk_name + '.apk'))
             os.remove(apk_path)
