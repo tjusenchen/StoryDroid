@@ -1,4 +1,4 @@
-# StoryDroid, StoryDistiller, StoryDroid+
+# StoryDroid
 We have made the source code and the corresponding dataset publicly available. We hope this project can benefit other researchers or practiontiners in the field of analysis of Android apps. Please feel free to contact us (senchen@tju.edu.cn) if you have any questions and issues. We will continue to maintain this project. Thanks for your feedback.
 
 ## Environment Configuration
