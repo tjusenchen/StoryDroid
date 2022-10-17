@@ -124,7 +124,7 @@ def startRepkg(apk_path, apkname, apkresult_folder, output):
 
     builtApk = False
     for line in recompileInfo.split('\n'):
-        if "Error: Resource is not public." in line:
+        if "Error: Resource is not public." in line and "AndroidManifest.xml" in line:
             line_num = int(line.split('AndroidManifest.xml:')[1].split(': error')[0])
             modifyManifestAgain(apkname, line_num)
             recompileInfo = recompile(apkname)
