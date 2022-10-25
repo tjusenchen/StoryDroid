@@ -25,7 +25,9 @@ export JAVA_HOME JAVA_BIN CLASSPATH PATH
 ```
 
 ## Usage
-```Python run_storydistiller.py [apk(s)_folder]```
+```python2.7 main_full.py```
+
+```python2.7 main_partial.py```
 
 ## Website and Dataset
 https://sites.google.com/view/storydistiller/
