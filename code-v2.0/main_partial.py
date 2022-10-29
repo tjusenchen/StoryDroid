@@ -455,7 +455,7 @@ if __name__ == '__main__':
     csv.writer(open(out_csv, 'a')).writerow(('apk_name', 'defined_pkg_name', 'used_pkg_name', 'all_acts_num', 'ic3_label',
                                              'appearedActs_in_atgs_num', 'act_coverage', 'independentActs_not_in_acts_num', 'all_atgs_num',
                                              'scenarios_num', 'static_atgs_num',
-                                             'dynamic_atgs_num', 'decompile_label', 'sign_label', 'install_label'
+                                             'dynamic_atgs_num', 'decompile_label', 'sign_label', 'install_label',
                                              'startup_acts_num', 'failed_startup_acts_num', 'failed_startup_acts'))
 
     for apk in os.listdir(apk_dir):
