@@ -25,9 +25,15 @@ export JAVA_HOME JAVA_BIN CLASSPATH PATH
 ```
 
 ## Usage
-* If you want to use the full function of StoryDroid, please use the following command: python2.7 main_full.py
+* If you want to use the full function of StoryDroid, please use the following command: 
+```
+python2.7 main_full.py
+```
 
-* If you want to use the fuction of atg (Activity transition graph) generation, please the following command: python2.7 main_partial.py
+* If you want to use the fuction of atg (Activity transition graph) generation, please the following command: 
+```
+python2.7 main_partial.py
+```
 
 ## Website and Dataset
 https://sites.google.com/view/storydistiller/
