@@ -35,9 +35,6 @@ python2.7 main_full.py
 python2.7 main_partial.py
 ```
 
-## Website and Dataset
-https://sites.google.com/view/storydistiller/
-
 ## Papers
 [1] StoryDroid: Automated Generation of Storyboard for Android Apps
 ```
