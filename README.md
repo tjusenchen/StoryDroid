@@ -1,10 +1,10 @@
 # StoryDroid
-We have made the source code and the corresponding dataset publicly available. We hope this project can benefit other researchers or practiontiners in the field of analysis of Android apps. Please feel free to contact us (senchen@tju.edu.cn) if you have any questions and issues. We will continue to maintain this project. Thanks for your feedback.
+We have made the source code publicly available. We hope this project can benefit other researchers or practiontiners in the field of analysis of Android apps. Please feel free to contact us (senchen@tju.edu.cn) if you have any questions and issues. We will continue to maintain this project. Thanks for your feedback.
 
 ## Environment Configuration
 * Ubuntu/Macbook
 * Python: 2.7
-* APKTool: 2.4.1
+* APKTool: 2.6.1 (Please use the newest version of APKTool)
 * Android emulator：X86, Android 7.1.1, Google APIs, 1920 * 1080
 * Android environment: adb, aapt
 * Java environment (jdk): jdk1.8.0_45
@@ -25,15 +25,15 @@ export JAVA_HOME JAVA_BIN CLASSPATH PATH
 ```
 
 ## Usage
-```python2.7 main_full.py```
+* If you want to use the full function of StoryDroid, please use the following command: python2.7 main_full.py
 
-```python2.7 main_partial.py```
+* If you want to use the fuction of atg (Activity transition graph) generation, please the following command: python2.7 main_partial.py
 
 ## Website and Dataset
 https://sites.google.com/view/storydistiller/
 
 ## Papers
-[1] StoryDroid: Automated Generation of Storyboard for Android Apps (Research Paper)
+[1] StoryDroid: Automated Generation of Storyboard for Android Apps
 ```
 @inproceedings{chen2019storydroid,
   title={Storydroid: Automated generation of storyboard for Android apps},
@@ -45,7 +45,7 @@ https://sites.google.com/view/storydistiller/
 }
 ```
 
-[2] Automatically Distilling Storyboard with Rich Features for Android Apps (Research Paper)
+[2] Automatically Distilling Storyboard with Rich Features for Android Apps
 ```
 @inproceedings{chen2022storydistiller,
   title={Automatically Distilling Storyboard with Rich Features for Android Apps},
@@ -56,7 +56,7 @@ https://sites.google.com/view/storydistiller/
 }
 ```
 
-[3] StoryDroid+: An Offline Tool for Generating Storyboard for Android Apps (Demo Paper, Under Submission)
+[3] StoryDroid+: An Offline Tool for Generating Storyboard for Android Apps
 ```
 @inproceedings{zhang22storydroid+,
   title={StoryDroid+: An Offline Tool for Generating Storyboard for Android Apps},
