@@ -58,16 +58,5 @@ python2.7 main_partial.py
   organization={IEEE}
 }
 ```
-
-[3] StoryDroid+: An Offline Tool for Generating Storyboard for Android Apps
-```
-@inproceedings{zhang22storydroid+,
-  title={StoryDroid+: An Offline Tool for Generating Storyboard for Android Apps},
-  author={Zhang, Yuxin, Chen, Sen and Fan, Lingling and Chen, Chunyang and Liu, Yang},
-  pages={1--5},
-  year={2022},
-  organization={ACM}
-}
-```
 ## Contact
 [Sen Chen](https://sen-chen.github.io/) All Copyright Reserved.
