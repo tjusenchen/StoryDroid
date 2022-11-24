@@ -35,28 +35,5 @@ python2.7 main_full.py
 python2.7 main_partial.py
 ```
 
-## Papers
-[1] StoryDroid: Automated Generation of Storyboard for Android Apps
-```
-@inproceedings{chen2019storydroid,
-  title={Storydroid: Automated generation of storyboard for Android apps},
-  author={Chen, Sen and Fan, Lingling and Chen, Chunyang and Su, Ting and Li, Wenhe and Liu, Yang and Xu, Lihua},
-  booktitle={2019 IEEE/ACM 41st International Conference on Software Engineering (ICSE)},
-  pages={596--607},
-  year={2019},
-  organization={IEEE}
-}
-```
-
-[2] Automatically Distilling Storyboard with Rich Features for Android Apps
-```
-@inproceedings{chen2022storydistiller,
-  title={Automatically Distilling Storyboard with Rich Features for Android Apps},
-  author={Chen, Sen and Fan, Lingling and Chen, Chunyang and Liu, Yang},
-  booktitle={IEEE Transactions on Software Engineering (TSE)},
-  year={2022},
-  organization={IEEE}
-}
-```
 ## Contact
 [Sen Chen](https://sen-chen.github.io/) All Copyright Reserved.
