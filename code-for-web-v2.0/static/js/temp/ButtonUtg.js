@@ -1,0 +1,4 @@
+var utg = {
+"nodes": [{'layoutcode': '', 'app': 'a2dp.Vol_133', 'label': 'chooseAppButton_Button', 'shape': 'image', 'actcode': '', 'image': '/static/components/editdevice/Button/16*a2dp.Vol_133*Button*chooseAppButton.png', 'id': '16*a2dp.Vol_133*Button*chooseAppButton.png'}, {'layoutcode': '', 'app': 'a2dp.Vol_133', 'label': 'chooseBTbutton_Button', 'shape': 'image', 'actcode': '', 'image': '/static/components/editdevice/Button/18*a2dp.Vol_133*Button*chooseBTbutton.png', 'id': '18*a2dp.Vol_133*Button*chooseBTbutton.png'}],
+"edges": [{'to': '18*a2dp.Vol_133*Button*chooseBTbutton.png', 'from': '16*a2dp.Vol_133*Button*chooseAppButton.png'}]
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>StoryDroid+</title>
+
+  <!-- slider stylesheet -->
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.css')}}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{url_for('static', filename='css/responsive.css')}}" rel="stylesheet" />
+</head>
+
+<body class="sub_page" style="background-image: url(../static/images/hero-bg.jpg);background-size: cover;">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a class="navbar-brand" href="{{url_for('index')}}">
+            <span>
+              StoryDroid+
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('about')}}"> About </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('do')}}"> Recent Scans </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('doAct')}}"> Activity</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('contact')}}">Contact us</a>
+                </li>
+              </ul>
+              <div class="user_option">
+                <a href="">
+                  <img src="{{url_for('static', filename='images/user.png')}}" alt="">
+                </a>
+                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+
+  </div>
+  <!-- do section -->
+  <div class="search d1" style="margin-left:60%;background: #A3D0C3;width:25%">
+        <form action="/graphAct" method="get" >
+            <div>
+                <input type="text" name="name" id="name" style="width: 100%;height: 35px;padding-left: 10px;border: 2px solid #7BA7AB;outline: none;background: #fff;color: #9E9C9C;" placeholder="Search (App Name)"/>
+                <input type="submit" value="Search" style="position: absolute;width: 65px;height: 35px;border: none;background-color: #7BA7AB;border-radius: 0 5px 5px 0;cursor: pointer;"/>
+            </div>
+        </form>
+    </div>
+  <style>
+  </style>
+
+    <section class="table_section position-relative" style="margin-top:50px;">
+      <table border="0"  cellpadding="3" cellspacing="0" style="width: 80%;" id="tab" class="detail-box">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </section>
+    <table border="0"  cellpadding="3" cellspacing="0" style="width: 100%;" id="tab1" class="detail-box">
+      </table>
+
+  <!-- end do section -->
+  <style>
+    .table_section {
+      height: 90%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      color: #ffffff;
+    }
+
+    .table_section .detail-box {
+      text-align: center;
+      margin:auto;
+    }
+
+    #a1 {
+      color: #fff;
+      font-size: 30px;
+    }
+
+    #a1:hover {
+      background-color: transparent;
+      color: #f00;
+    }
+  </style>
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section" style="position:fixed;bottom:0;width:100%;">
+    <p>
+      &copy; StoryDroid+ - All Rights Reserved
+    </p>
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- owl carousel script
+    -->
+  <script type="text/javascript">
+    function getParams(key) {
+				var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if (r != null) {
+					return unescape(r[2]);
+				}
+				return null;
+			};
+	var libraryname = getParams("name");
+	  console.log(libraryname);
+    function listF(){
+				//while(true){
+					$.ajax(
+				  {
+					 type: "POST",
+					 url: "/listActs",
+					 dataType: "html",
+					 success: function(msg)
+					 {
+						 console.log(msg);
+						 if (msg!=[]){
+						    var arr =eval(msg);
+						    //alert( arr );
+						 	$(document).ready(function() {
+						 	    index = 0
+						 	    var actL = []
+								for(var file of arr){
+								  if (file.toUpperCase().includes(libraryname.toUpperCase())){
+								    index = index + 1
+								    if (index>4){
+								      s = `<tr><td><a id='a1' href='loadingAct?name=${actL[0]}'>` + actL[0] + `</a></td><td><a id='a1' href='loadingAct?name=${actL[1]}'>` + actL[1] + `</a></td><td><a id='a1' href='loadingAct?name=${actL[2]}'>` + actL[2] + `</a></td><td><a id='a1' href='loadingAct?name=${actL[3]}'>` + actL[3] +  "</td></tr>";
+									  console.log(s)
+                                      $("#tab").append(s);
+                                      actL = []
+                                      index = 0
+								    }
+									console.log(file);
+									actL.push(file)
+								  }
+								}
+								if (actL != []){
+								  i=0
+								  actLT = []
+								  for (var file of actL){
+								    actLT.push(file)
+								    i = i +1
+								  }
+								  while (i<4){
+								    actLT.push('')
+								    i = i + 1
+								  }
+								}
+								s = `<tr><td><a id='a1' href='loadingAct?name=${actLT[0]}'>` + actLT[0] + `</a></td><td><a id='a1' href='loadingAct?name=${actLT[1]}'>` + actLT[1] + `</a></td><td><a id='a1' href='loadingAct?name=${actLT[2]}'>` + actLT[2] + `</a></td><td><a id='a1' href='loadingAct?name=${actLT[3]}'>` + actLT[3] +  "</td></tr>";
+								  console.log(s)
+                                $("#tab").append(s);
+							});
+						 	//window.location="{{url_for('contact')}}"
+						 }
+						 else if (msg==""){
+							alert( "No files uploaded!" )
+							window.location="{{url_for('index')}}"
+						 }
+					 },
+					 error: function (xhr, status, error) {
+						console.log(error);
+					}
+				  });
+				//}
+			}
+	listF();
+  </script>
+  <!-- end owl carousel script -->
+
+</body>
+
+</html>

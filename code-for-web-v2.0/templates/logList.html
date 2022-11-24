@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>StoryDroid+</title>
+
+  <!-- slider stylesheet -->
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.css')}}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{url_for('static', filename='css/responsive.css')}}" rel="stylesheet" />
+</head>
+
+<body class="sub_page" style="background-image: url(../static/images/hero-bg.jpg);background-size: cover;">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a class="navbar-brand" href="{{url_for('index')}}">
+            <span>
+              StoryDroid+
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('about')}}"> About </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('do')}}"> Recent Scans </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('doAct')}}"> Activity</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('contact')}}">Contact us</a>
+                </li>
+              </ul>
+              <div class="user_option">
+                <a href="">
+                  <img src="{{url_for('static', filename='images/user.png')}}" alt="">
+                </a>
+                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+
+  </div>
+  <!-- do section -->
+<!--  <div class="search d1" style="margin-left:60%;background: #A3D0C3;width:25%">-->
+<!--        <form action="/doS" method="get" >-->
+<!--            <div>-->
+<!--                <input type="text" name="name" id="name" style="width: 100%;height: 40px;padding-left: 10px;border: 2px solid #ed7a4a;outline: none;background: #fff;color: #757575;" placeholder="Search (App Name)"/>-->
+<!--                <input type="submit" value="Search" style="position: absolute;width: 75px;height: 40px;border: none;background-color: #ed7a4a;color:#fff;border-radius: 0 5px 5px 0;cursor: pointer;font-size: 20px;"/>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
+  <style>
+  </style>
+<!--    <input type="button" class='btn btn-primary' style='margin-left:95%;margin-top:10px;background-color: #ed7a4a;color:#fff; width: 150px;font-size:10px;' onclick="demo2()" value="Download Logs">-->
+    <section class="table_section position-relative">
+      <table border="0"  cellpadding="3" cellspacing="0" style="width: 100%;" id="tab" class="detail-box">
+<!--        <tr>-->
+<!--          <td>Id</td>-->
+<!--          <td>Name</td>-->
+<!--          <td></td>-->
+<!--          <td></td>-->
+<!--        </tr>-->
+      </table>
+    </section>
+    <input type="button" class='btn btn-primary' style='margin-left:90%;margin-top:10px;background-color: #ed7a4a;color:#fff; width: 150px;font-size:15px;' onclick="demo2()" value="Download Logs">
+
+    <table border="0"  cellpadding="3" cellspacing="0" style="width: 100%;" id="tab1" class="detail-box">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      <input type="button" class='btn btn-primary' style='margin-left:92%;margin-top:50px;background-color: #ed7a4a;color:#fff; width: 150px;font-size: 20px;' onclick="demo2()" value="commit">
+      </table>
+
+  <!-- end do section -->
+  <style>
+    .table_section {
+      height: 90%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      color: #ffffff;
+    }
+
+    .table_section .detail-box {
+      text-align: center;
+      font-size: 10px;
+      margin:auto;
+    }
+
+    .table_section .detail-box a {
+      display: inline-block;
+      padding: 10px 55px;
+      background-color: #ffffff;
+      border: 1px solid #ffffff;
+      color: #000000;
+      border-radius: 20px 20px 0 20px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    .table_section .detail-box a:hover {
+      background-color: transparent;
+      color: #ffffff;
+    }
+  </style>
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section" style="position:fixed;bottom:0;width:100%;">
+    <p>
+      &copy; StoryDroid+ - All Rights Reserved
+    </p>
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script type="text/javascript">
+			var loader = document.querySelector('.loader');
+			var main = document.querySelector('.main');
+			window.onload = function(){
+				//while(true){
+					$.ajax(
+				  {
+					 type: "POST",
+					 url: "/read_excel",
+					 dataType: "html",
+					 success: function(msg)
+					 {
+						 //var files = [];
+						 //files.push("/home/zyx/Documents/log1101.xls")
+						 //window.location.href = "/static/log1101.xls";
+
+						 //alert( "Data Saved: " + msg );
+						 console.log(eval(msg));
+						 //alert(eval(msg)[0][0]);
+						 var i = 0;
+						 s = "<tr><th>" + eval(msg)[0][0] + "</th><th>" + eval(msg)[0][1] + "</th><th>" +
+										eval(msg)[0][2] + "</th><th>" + eval(msg)[0][3] + "</th><th>" + eval(msg)[0][4] + "</th><th>" + eval(msg)[0][5] + "</th><th>" + eval(msg)[0][6] + "</th><th>" + eval(msg)[0][7] + "</th></tr>";
+										console.log(s)
+									$("#tab").append(s);
+						 while(i < eval(msg).length){
+						    i = i + 1;
+						    s = "<tr><td>" + eval(msg)[i][0] + "</td><td>" + eval(msg)[i][1] + "</td><td>" +
+										eval(msg)[i][2] + "</td><td>" + eval(msg)[i][3] + "</td><td>" + eval(msg)[i][4] + "</td><td>" + eval(msg)[i][5] + "</td><td>" + eval(msg)[i][6] + "</td><td>" + eval(msg)[i][7] + "</td></tr>";
+										console.log(s)
+									$("#tab").append(s);
+						 }
+						 if(i != 0){
+								  s1 = `<input type="button" class='btn btn-primary' style='margin-left:92%;margin-top:50px;background-color: #ed7a4a;color:#fff; width: 150px;font-size: 20px;' onclick="demo2()" value="commit">`;
+								  $("#tab1").append(s1);
+								}
+					 },
+					 error: function (xhr, status, error) {
+						console.log(error);
+					}
+				  });
+				//}
+			}
+			function demo2() {
+			    window.location.href = "/static/log1101.xls";
+			}
+
+		</script>
+  <!-- end owl carousel script -->
+
+</body>
+
+</html>
