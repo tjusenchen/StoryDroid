@@ -40,6 +40,9 @@ python2.7 main_partial.py
 ```
 
 ## StoryDroid+ Usage
+```
+python2.7 test.py
+```
 
 ## Contact
 [Sen Chen](https://sen-chen.github.io/) All Copyright Reserved.
