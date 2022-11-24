@@ -1,0 +1,4 @@
+var utg = {
+"nodes": [{'layoutcode': '', 'app': 'a2dp.Vol_133', 'label': 'textView4_TextView', 'shape': 'image', 'actcode': '', 'image': '/static/components/editdevice/TextView/20*a2dp.Vol_133*TextView*textView4.png', 'id': '20*a2dp.Vol_133*TextView*textView4.png'}, {'layoutcode': '', 'app': 'a2dp.Vol_133', 'label': '_TextView', 'shape': 'image', 'actcode': '', 'image': '/static/components/editdevice/TextView/4*a2dp.Vol_133*TextView*.png', 'id': '4*a2dp.Vol_133*TextView*.png'}, {'layoutcode': '', 'app': 'a2dp.Vol_133', 'label': 'textView2_TextView', 'shape': 'image', 'actcode': '', 'image': '/static/components/editdevice/TextView/8*a2dp.Vol_133*TextView*textView2.png', 'id': '8*a2dp.Vol_133*TextView*textView2.png'}],
+"edges": [{'to': '4*a2dp.Vol_133*TextView*.png', 'from': '20*a2dp.Vol_133*TextView*textView4.png'}, {'to': '8*a2dp.Vol_133*TextView*textView2.png', 'from': '4*a2dp.Vol_133*TextView*.png'}]
+}

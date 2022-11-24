@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/xlsx.core.min.js"></script>
+		<script>
+		window.onload = function() {
+			$('#upload_excel').change(function(e) {
+				var files = e.target.files;
+				var fileReader = new FileReader();
+				var excle = $("#upload_excel").val();
+				if(excle == null) {
+					alert("未选择Excel文件");
+				} else {
+					// 判断是否是Excel格式
+					if(excle != '') {
+						//文件名可以带空格
+						var reg = /^.*\.(?:xls|xlsx)$/i;
+						//校验不通过
+						if(!reg.test(excle)) {
+							alert("请上传excel格式的文件!");
+							return;
+						} else {
+							fileReader.onload = function(ev) {
+								try {
+									var data = ev.target.result,
+										workbook = XLSX.read(data, {
+											type: 'binary'
+										}), // 以二进制流方式读取得到整份excel表格对象
+										persons = []; // 存储获取到的数据
+								} catch(e) {
+									alert('文件类型不正确');
+									return;
+								}
+
+
+								// 表格的表格范围，可用于判断表头是否数量是否正确
+								var fromTo = '';
+								// 遍历每张表读取
+								for(var sheet in workbook.Sheets) {
+									if(workbook.Sheets.hasOwnProperty(sheet)) {
+										fromTo = workbook.Sheets[sheet]['!ref'];
+										persons = persons.concat(XLSX.utils.sheet_to_json(workbook.Sheets[sheet]));
+									}
+								}
+
+								if(persons.length > 10000) {
+									alert("Excel长度超过10000条，不能使用");
+								} else {
+									_Result = persons;
+									var id = "";
+									if(persons.length == 0) {
+										alert("导入Excel中无数据");
+									} else {
+										//  添加在页面表格中（添加代码就不举例说明了）
+										alert(persons);
+									}
+								}
+							};
+						}
+					}
+
+				}
+				// 以二进制方式打开文件
+				fileReader.readAsBinaryString(files[0]);
+				// 清空input 值 避免选择同名字的excel 文件不执行
+				$("#upload_excel").val("")
+			});
+		}
+		</script>
+	</head>
+
+	<body>
+		<input type="file" id="upload_excel">
+	</body>
+
+</html>
