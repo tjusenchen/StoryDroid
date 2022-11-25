@@ -1,10 +1,6 @@
 # StoryDroid/StoryDistiller
 We have made the source code publicly available. We hope this project can benefit other researchers or practiontiners in the field of analysis of Android apps. Please feel free to contact us (senchen@tju.edu.cn) if you have any questions and issues. We will continue to maintain this project. Thanks for your feedback.
 
-# StoryDroid+
-StoryDroid+ provides an operation-friendly platform for using storyboards and helps different stakeholders (e.g., designers, package managers, developers) explore and understand apps from different perspectives through rich visual pages.
-<img width="1408" alt="overview" src="https://user-images.githubusercontent.com/23289910/203773727-dbb7ffb2-69d6-4ba2-8185-5db0868d14f5.png">
-
 ## Environment Configuration
 * Ubuntu/Macbook
 * Python: 2.7
@@ -38,6 +34,10 @@ python2.7 main_full.py
 ```
 python2.7 main_partial.py
 ```
+
+# StoryDroid+
+StoryDroid+ provides an operation-friendly platform for using storyboards and helps different stakeholders (e.g., designers, package managers, developers) explore and understand apps from different perspectives through rich visual pages.
+<img width="1408" alt="overview" src="https://user-images.githubusercontent.com/23289910/203773727-dbb7ffb2-69d6-4ba2-8185-5db0868d14f5.png">
 
 ## StoryDroid+ Usage
 ```
