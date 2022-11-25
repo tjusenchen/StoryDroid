@@ -39,6 +39,8 @@ python2.7 main_partial.py
 StoryDroid+ provides an operation-friendly platform for using storyboards and helps different stakeholders (e.g., designers, package managers, developers) explore and understand apps from different perspectives through rich visual pages.
 <img width="1408" alt="overview" src="https://user-images.githubusercontent.com/23289910/203773727-dbb7ffb2-69d6-4ba2-8185-5db0868d14f5.png">
 
+## Configuration
+
 ## StoryDroid+ Usage
 ```
 python2.7 test.py
