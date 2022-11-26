@@ -40,7 +40,7 @@ StoryDroid+ provides an operation-friendly platform for using storyboards and he
 <img width="1408" alt="overview" src="https://user-images.githubusercontent.com/23289910/203773727-dbb7ffb2-69d6-4ba2-8185-5db0868d14f5.png">
 
 ## Configuration
-* The ***Environment Configuration*** of tool is the same as that of StoryDroid/StoryDistiller
+* The ***Environment Configuration*** of StoryDroid+ is the same as that of StoryDroid/StoryDistiller
 * pip install flask
 
 ## StoryDroid+ Usage
