@@ -44,6 +44,7 @@ StoryDroid+ provides an operation-friendly platform for using storyboards and he
 * pip install flask
 
 ## StoryDroid+ Usage
+The folder ***code-for-web-v2.0*** is the latest version of StoryDroid+, in which the folder ***"templates"*** contains the front-end code of StoryDroid+, and the folder ***"static"*** contains the resource files of StoryDroid+. If you want to use the full function of StoryDroid+, please use the following command:
 ```
 python2.7 test.py
 ```
