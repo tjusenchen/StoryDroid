@@ -41,7 +41,7 @@ StoryDroid+ provides an operation-friendly platform for using storyboards and he
 
 ## Configuration
 * The ***Environment Configuration*** of StoryDroid+ is the same as that of StoryDroid/StoryDistiller
-* StoryDroid+ uses Flask to build an offline website, a lightweight customizable framework, written in Python, which is more flexible, lightweight, and secure. So:
+* StoryDroid+ uses ***Flask*** framework to build an offline website, a lightweight customizable framework, written in Python, which is more flexible, lightweight, and secure. So:
 ```
 pip install flask
 ```
