@@ -1,4 +1,4 @@
-# NEW: We developed an extended version of StoryDroid/StoryDistiller to explore more scenes of GUI pages, named SceneDroid. [SeneDroid](https://github.com/SceneDroid/SceneDroid)
+# NEW: We developed an extended version of StoryDroid/StoryDistiller to explore more scenes of GUI pages, named [SceneDroid](https://github.com/SceneDroid/SceneDroid).
 
 # StoryDroid/StoryDistiller
 We have made the source code publicly available. We hope this project can benefit other researchers or practitioners in the field of analysis of Android apps. Please contact us (senchen@tju.edu.cn) if you have any questions or issues. We will continue to maintain this project. Thanks for your feedback.
