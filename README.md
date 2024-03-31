@@ -2,7 +2,7 @@
 
 * March 31, 2024: We will release a new version soon to extract storyboards with more UI scenarios compared with SceneDroid, StoryDistiller, and StoryDroid for Android apps!
 
-*We developed an extended version of StoryDroid/StoryDistiller to explore more scenes of GUI pages, named [SceneDroid](https://github.com/SceneDroid/SceneDroid).
+* We developed an extended version of StoryDroid/StoryDistiller to explore more scenes of GUI pages, named [SceneDroid](https://github.com/SceneDroid/SceneDroid).
 
 # StoryDroid/StoryDistiller
 We have made the source code publicly available. We hope this project can benefit other researchers or practitioners in the field of analysis of Android apps. Please contact us (senchen@tju.edu.cn) if you have any questions or issues. We will continue to maintain this project. Thanks for your feedback.
