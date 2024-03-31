@@ -1,3 +1,5 @@
+# We will release a new version soon to extract storyboards with more UI scenarios compared with SceneDroid, StoryDistiller, and StoryDroid for Android apps!
+
 # NEW: We developed an extended version of StoryDroid/StoryDistiller to explore more scenes of GUI pages, named [SceneDroid](https://github.com/SceneDroid/SceneDroid).
 
 # StoryDroid/StoryDistiller
