@@ -8,7 +8,7 @@
 
 * We developed a new tool named [IRIS](https://github.com/iris-mobile-accessibility-repair/iris-mobile) based on Xbot to repair the color-related accessibility issues for Android apps!
 
-* We developed a new tool named [Xbot](https://github.com/tjusenchen/Xbot) based on StoryDroid to detect accessibility issues for Android apps!
+* We developed a new tool named [Xbot](https://github.com/tjusenchen/Xbot) based on StoryDistiller/StoryDroid to detect accessibility issues for Android apps!
 
 # StoryDroid/StoryDistiller
 We have made the source code publicly available. We hope this project can benefit other researchers or practitioners in the field of analysis of Android apps. Please contact us (senchen@tju.edu.cn) if you have any questions or issues. We will continue to maintain this project. Thanks for your feedback.
