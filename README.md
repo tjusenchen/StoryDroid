@@ -1,10 +1,14 @@
 # New Versions
 
-* October 29, 2024: We released a new version to extract storyboards with more UI scenarios compared with [SceneDroid](https://github.com/SceneDroid/SceneDroid), [StoryDistiller](https://github.com/tjusenchen/StoryDroid/), and [StoryDroid](https://github.com/tjusenchen/StoryDroid/) for Android apps! Meanwhile, we combined the capability of UI exploration with Monkey and released a new tool named [Storymonkey](https://github.com/tjusenchen/StoryDroid/Storymonkey) to dynamically test Android apps! If you only use the capability of UI exploration, please use the configuration [XX], otherwise use the capability of app testing by setting [XX].
+* We released a new version to extract storyboards with more UI scenarios compared with [SceneDroid](https://github.com/SceneDroid/SceneDroid), [StoryDistiller](https://github.com/tjusenchen/StoryDroid/), and [StoryDroid](https://github.com/tjusenchen/StoryDroid/) for Android apps! Meanwhile, we combined the capability of UI exploration with Monkey and released a new tool named [Storymonkey](https://github.com/tjusenchen/StoryDroid/Storymonkey) to dynamically test Android apps! If you only use the capability of UI exploration, please use the configuration [XX], otherwise use the capability of app testing by setting [XX].
 
-* March 31, 2024: We will release a new version soon to extract storyboards with more UI scenarios compared with SceneDroid, StoryDistiller, and StoryDroid for Android apps!
+* We developed a new tool named [A11yScan](https://github.com/A11yScan/A11yScan.git) based on Xbot with a better capability of UI exploration compared with SceneDroid, Xbot, StoryDistiller, StoryDroid, etc.
 
 * We developed an extended version of StoryDroid/StoryDistiller to explore more scenes of GUI pages, named [SceneDroid](https://github.com/SceneDroid/SceneDroid).
+
+* We developed a new tool named [IRIS](https://github.com/iris-mobile-accessibility-repair/iris-mobile) based on Xbot to repair the color-related accessibility issues for Android apps!
+
+* We developed a new tool named [Xbot](https://github.com/tjusenchen/Xbot) based on StoryDroid to detect accessibility issues for Android apps!
 
 # StoryDroid/StoryDistiller
 We have made the source code publicly available. We hope this project can benefit other researchers or practitioners in the field of analysis of Android apps. Please contact us (senchen@tju.edu.cn) if you have any questions or issues. We will continue to maintain this project. Thanks for your feedback.
