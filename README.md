@@ -1,6 +1,6 @@
 # New Versions
 
-* We released a new version to extract storyboards with more UI scenarios compared with [SceneDroid](https://github.com/SceneDroid/SceneDroid), [StoryDistiller](https://github.com/tjusenchen/StoryDroid/), and [StoryDroid](https://github.com/tjusenchen/StoryDroid/) for Android apps! Meanwhile, we combined the capability of UI exploration with Monkey and released a new tool named [Storymonkey](https://github.com/tjusenchen/StoryDroid/Storymonkey) to dynamically test Android apps! If you only use the capability of UI exploration, please use the configuration [XX], otherwise use the capability of app testing by setting [XX].
+* We released a new version to extract storyboards with more UI scenarios compared with [SceneDroid](https://github.com/SceneDroid/SceneDroid), [StoryDistiller](https://github.com/tjusenchen/StoryDroid/), and [StoryDroid](https://github.com/tjusenchen/StoryDroid/) for Android apps! Meanwhile, we combined the capability of UI exploration with Monkey and released a new tool named [StoryMonkey](https://github.com/tjusenchen/StoryDroid/StoryMonkey) to dynamically test Android apps! If you only use the capability of UI exploration, please use the configuration [XX], otherwise use the capability of app testing by setting [XX].
 
 * We developed a new tool named [A11yScan](https://github.com/A11yScan/A11yScan.git) based on Xbot with a better capability of UI exploration compared with SceneDroid, Xbot, StoryDistiller, StoryDroid, etc.
 
