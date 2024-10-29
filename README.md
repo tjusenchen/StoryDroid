@@ -1,5 +1,7 @@
 # New Versions
 
+* October 29, 2024: We released a new version to extract storyboards with more UI scenarios compared with [SceneDroid](https://github.com/SceneDroid/SceneDroid), [StoryDistiller](https://github.com/tjusenchen/StoryDroid/), and [StoryDroid](https://github.com/tjusenchen/StoryDroid/) for Android apps! Meanwhile, we combined the capability of UI exploration with Monkey and released a new tool named [Storymonkey](https://github.com/tjusenchen/StoryDroid/Storymonkey) to dynamically test Android apps! If you only use the capability of UI exploration, please use the configuration [XX], otherwise use the capability of app testing by setting [XX].
+
 * March 31, 2024: We will release a new version soon to extract storyboards with more UI scenarios compared with SceneDroid, StoryDistiller, and StoryDroid for Android apps!
 
 * We developed an extended version of StoryDroid/StoryDistiller to explore more scenes of GUI pages, named [SceneDroid](https://github.com/SceneDroid/SceneDroid).
